@@ -12,8 +12,7 @@ export default function App() {
   const onFinish = () => setReady(true);
   const startLoading = async () => {
     const fonts = loadFonts([Ionicons.font]);
-    const images = loadImages([require("./img/stoneIcon.png")]);
-    await Promise.all([...fonts, ...images]);
+    await Promise.all([...fonts]);
   };
   if (!ready) {
     return (
