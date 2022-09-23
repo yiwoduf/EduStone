@@ -26,7 +26,7 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
+    <NavigationContainer {...this}>
       <Tabs/>
     </NavigationContainer>
   );
