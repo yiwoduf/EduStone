@@ -1,8 +1,11 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+// App.js
 
-import MainPage from "./scripts/MainPage";
+import { StatusBar } from "expo-status-bar";
+import React, { Component } from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+
+import appStyles from "./components/appStyles";
+import MainPage from "./components/MainPage";
 
 export default function App() {
   return (
