@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "EduStone",
+    "slug": "EduStone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "EduStone"
+}
