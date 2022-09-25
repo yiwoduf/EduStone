@@ -14,6 +14,7 @@ export default function App() {
     const fonts = loadFonts([Ionicons.font]);
     await Promise.all([...fonts]);
   };
+
   if (!ready) {
     return (
       <AppLoading
@@ -23,9 +24,10 @@ export default function App() {
       />
     );
   }
+
   return (
-    <NavigationContainer>
-      <Tabs />
+    <NavigationContainer {...this}>
+      <Tabs/>
     </NavigationContainer>
   );
 }
