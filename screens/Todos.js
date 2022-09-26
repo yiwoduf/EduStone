@@ -13,7 +13,7 @@ const Todos = () => {
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../design/ui/UI_ToDoList_iOS.png")}
+        source={require("../Design/ui/UI_ToDoList_iOS.png")}
         resizeMode="contain"
       />
     </View>
