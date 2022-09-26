@@ -1,4 +1,5 @@
 // appStyles.js
+// Temporary StyleSheet for beta @lee
 
 import { StyleSheet, Dimensions } from "react-native";
 
@@ -8,5 +9,8 @@ export default StyleSheet.create({
   ui: {
     maxHeight: height,
     maxWidth: width,
+  },
+  linearGradient: {
+    flex: 1,
   },
 });
