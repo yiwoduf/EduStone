@@ -1,4 +1,5 @@
 // appStyles.js
+// Temporary StyleSheet for beta @lee
 
 import { StyleSheet, Dimensions } from "react-native";
 
