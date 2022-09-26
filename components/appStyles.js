@@ -9,4 +9,7 @@ export default StyleSheet.create({
     maxHeight: height,
     maxWidth: width,
   },
+  linearGradient: {
+    flex: 1,
+  },
 });
