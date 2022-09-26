@@ -7,7 +7,7 @@ const Award = () => {
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../design/ui/UI_AwardList_iOS.png")}
+        source={require("../Design/ui/UI_AwardList_iOS.png")}
         resizeMode="contain"
       />
     </View>
