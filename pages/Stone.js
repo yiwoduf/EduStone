@@ -7,7 +7,7 @@ const Stone = () => {
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../Design/ui/UI_MainPage_iOS.png")}
+        source={require("../design/ui/UI_MainPage_iOS.png")}
         resizeMode="contain"
       />
     </View>

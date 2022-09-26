@@ -7,7 +7,7 @@ const Profile = () => {
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../Design/ui/UI_Profile_iOS.png")}
+        source={require("../design/ui/UI_Profile_iOS.png")}
         resizeMode="contain"
       />
     </View>
