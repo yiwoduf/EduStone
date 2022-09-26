@@ -1,20 +1,26 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import appStyles from "../components/appStyles";
+import appStyles from "../style/appStyles";
 
-const Award = () => {
+const Todos = () => {
   return (
+    /* 
+    * Deactivated for ui overlays @lee
+    <View style={styles.wrapper}>
+      <Text style={styles.text}>Todos</Text>
+    </View>
+    */
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../design/ui/UI_AwardList_iOS.png")}
+        source={require("../Design/ui/UI_ToDoList_iOS.png")}
         resizeMode="contain"
       />
     </View>
   );
 };
 
-export default Award;
+export default Todos;
 
 const styles = StyleSheet.create({
   wrapper: {

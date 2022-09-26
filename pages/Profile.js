@@ -1,26 +1,20 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import appStyles from "../components/appStyles";
+import appStyles from "../style/appStyles";
 
-const Todos = () => {
+const Profile = () => {
   return (
-    /* 
-    * Deactivated for ui overlays @lee
-    <View style={styles.wrapper}>
-      <Text style={styles.text}>Todos</Text>
-    </View>
-    */
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../Design/ui/UI_ToDoList_iOS.png")}
+        source={require("../design/ui/UI_Profile_iOS.png")}
         resizeMode="contain"
       />
     </View>
   );
 };
 
-export default Todos;
+export default Profile;
 
 const styles = StyleSheet.create({
   wrapper: {

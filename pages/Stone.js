@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import appStyles from "../components/appStyles";
+import appStyles from "../style/appStyles";
 
 const Stone = () => {
   return (
