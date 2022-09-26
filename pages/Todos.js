@@ -4,16 +4,10 @@ import appStyles from "../style/appStyles";
 
 const Todos = () => {
   return (
-    /* 
-    * Deactivated for ui overlays @lee
-    <View style={styles.wrapper}>
-      <Text style={styles.text}>Todos</Text>
-    </View>
-    */
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../Design/ui/UI_ToDoList_iOS.png")}
+        source={require("../design/ui/UI_ToDoList_iOS.png")}
         resizeMode="contain"
       />
     </View>
