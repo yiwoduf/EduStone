@@ -1,14 +1,14 @@
 import { View } from "react-native"; // For handling LinearGradient @lee
 import LinearGradient from "react-native-linear-gradient";
-import appStyles from "../components/appStyles";
+import appStyles from "../style/appStyles";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import Calendar from "../screens/Calendar";
-import Todos from "../screens/Todos";
-import Stone from "../screens/Stone";
-import Profile from "../screens/Profile";
-import Award from "../screens/Award";
+import Calendar from "../pages/Calendar";
+import Todos from "../pages/Todos";
+import Stone from "../pages/Stone";
+import Profile from "../pages/Profile";
+import Award from "../pages/Award";
 
 const Tab = createBottomTabNavigator();
 

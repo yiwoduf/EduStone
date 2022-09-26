@@ -1,20 +1,20 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import appStyles from "../components/appStyles";
+import appStyles from "../style/appStyles";
 
-const Stone = () => {
+const Award = () => {
   return (
     <View>
       <Image
         style={appStyles.ui}
-        source={require("../design/ui/UI_MainPage_iOS.png")}
+        source={require("../design/ui/UI_AwardList_iOS.png")}
         resizeMode="contain"
       />
     </View>
   );
 };
 
-export default Stone;
+export default Award;
 
 const styles = StyleSheet.create({
   wrapper: {
