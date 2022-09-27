@@ -1,18 +1,28 @@
 // StyleTodos.js
 // Stylesheet for Todos Page
 
-import { StyleSheet, Dimensions } from "react-native";
+import { Dimensions } from "react-native";
+import styled from "styled-components/native";
 
 const { width, height } = Dimensions.get("window"); // Retrieve Information of Device Window Size
 
-export default StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1d2951",
-  },
-  text: {
-    color: "#fff",
-  },
-});
+export const MainContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 15px;
+`;
+
+export const BackgroundContainer = styled.Image``;
+
+export const Header = styled.View`
+  display: flex;
+  justify-content: center;
+  height: ${height * 0.1};
+  width: ${width};
+  padding-left: 10px;
+`;
+
+export const HeaderTitle = styled.Text``;
+
+export const TodoListContainer = styled.View``;

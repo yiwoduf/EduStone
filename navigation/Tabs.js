@@ -60,7 +60,6 @@ const Tabs = () => {
         component={Stone}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
-            console.log(focused);
             return (
               <Ionicons name="aperture-outline" color={color} size={size} />
             );
