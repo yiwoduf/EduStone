@@ -52,8 +52,8 @@ export default StyleSheet.create({
     alignItems: "center",
     padding: 10,
     margin: 5,
-    minHeight: 100,
-    minWidth: 100,
+    minHeight: 80,
+    minWidth: 80,
     backgroundColor: "#00ff00",
   },
   sectionTitleWrapper: {
