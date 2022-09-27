@@ -19,7 +19,11 @@ const Tabs = () => {
       initialRouteName="Stone"
       screenOptions={{
         tabBarLabelStyle: isDark ? { color: "white" } : { color: "black" },
-        headerShown: false,
+        tabBarStyle: {
+          borderTopWidth: 0,
+          elevation: 0,
+        },
+        headerShown: false, // remove Header on top
         tabBarBackground: () => {
           return isDark ? (
             <View style={{ flex: 1 }}>
