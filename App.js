@@ -5,7 +5,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { Asset, useAssets } from "expo-asset";
 import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
+
+const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -18,6 +20,8 @@ export default function App() {
       try {
         // Pre-load fonts, make any API calls you need to do here
         // await Font.loadAsync(Ionicons.font);
+        const fonts = loadFonts([Ionicons.font]);
+        await Promise.all([...fonts]);
       } catch (e) {
         console.warn(e);
       } finally {
@@ -47,7 +51,7 @@ export default function App() {
 
   return (
     <NavigationContainer {...this}>
-      <Tabs/>
+      <Tabs />
     </NavigationContainer>
   );
 }

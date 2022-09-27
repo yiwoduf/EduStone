@@ -1,17 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
 import styleApp from "../style/styleApp";
-import styles from "../style/styleTodos";
+import {
+  MainContainer,
+  Header,
+  HeaderTitle,
+  BackgroundContainer,
+} from "../style/styleTodos";
 
 const Todos = () => {
   return (
-    <View>
-      <Image
-        style={styleApp.uiOverlay}
-        source={require("../design/ui/UI_ToDoList_iOS.png")}
-        resizeMode="contain"
-      />
-    </View>
+    <MainContainer>
+      <BackgroundContainer source={require("../design/bg/ToDoList_BG.png")} />
+      <Header>
+        <HeaderTitle>To Do List</HeaderTitle>
+      </Header>
+    </MainContainer>
   );
 };
 
