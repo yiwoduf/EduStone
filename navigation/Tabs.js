@@ -1,5 +1,5 @@
 import { View } from "react-native"; // For handling LinearGradient @lee
-import LinearGradient from "react-native-linear-gradient";
+import {LinearGradient} from "expo-linear-gradient";
 import appStyles from "../style/appStyles";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
