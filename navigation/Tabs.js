@@ -1,6 +1,6 @@
 import { View } from "react-native"; // For handling LinearGradient @lee
-import {LinearGradient} from "expo-linear-gradient";
-import appStyles from "../style/appStyles";
+import { LinearGradient } from "expo-linear-gradient";
+import styleApp from "../style/styleApp";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { useColorScheme } from "react-native"; // @jinu
@@ -25,14 +25,14 @@ const Tabs = () => {
             <View style={{ flex: 1 }}>
               <LinearGradient
                 colors={["#242424", "#3a2a31"]}
-                style={appStyles.linearGradient}
+                style={styleApp.linearGradient}
               ></LinearGradient>
             </View>
           ) : (
             <View style={{ flex: 1 }}>
               <LinearGradient
                 colors={["#f6fff8", "#ffe5d9"]}
-                style={appStyles.linearGradient}
+                style={styleApp.linearGradient}
               ></LinearGradient>
             </View>
           );

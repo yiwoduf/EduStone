@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import appStyles from "../style/appStyles";
+import styleApp from "../style/styleApp";
+import styles from "../style/styleTodos";
 
 const Todos = () => {
   return (
     <View>
       <Image
-        style={appStyles.ui}
+        style={styleApp.uiOverlay}
         source={require("../design/ui/UI_ToDoList_iOS.png")}
         resizeMode="contain"
       />
@@ -15,15 +16,3 @@ const Todos = () => {
 };
 
 export default Todos;
-
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1d2951",
-  },
-  text: {
-    color: "#fff",
-  },
-});

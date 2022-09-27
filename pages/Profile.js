@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import appStyles from "../style/appStyles";
+import styleApp from "../style/styleApp";
+import styles from "../style/styleProfile";
 
 const Profile = () => {
   return (
     <View>
       <Image
-        style={appStyles.ui}
+        style={styleApp.uiOverlay}
         source={require("../design/ui/UI_Profile_iOS.png")}
         resizeMode="contain"
       />
@@ -15,15 +16,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1d2951",
-  },
-  text: {
-    color: "#fff",
-  },
-});
