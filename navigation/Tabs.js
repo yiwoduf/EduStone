@@ -1,9 +1,9 @@
-import { View } from "react-native"; // For handling LinearGradient @lee
+import React from "react";
+import { View, useColorScheme } from "react-native"; // For handling LinearGradient @lee
 import { LinearGradient } from "expo-linear-gradient";
 import styleApp from "../style/styleApp";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React from "react";
-import { useColorScheme } from "react-native"; // @jinu
+import { Ionicons } from "@expo/vector-icons";
 import Calendar from "../pages/Calendar";
 import Todos from "../pages/Todos";
 import Stone from "../pages/Stone";
@@ -40,8 +40,33 @@ const Tabs = () => {
       }}
     >
       <Tab.Screen name="Calendar" component={Calendar} />
-      <Tab.Screen name="Todos" component={Todos} />
-      <Tab.Screen name="Stone" component={Stone} />
+      <Tab.Screen
+        name="Todos"
+        component={Todos}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return (
+              <Ionicons
+                name="ios-checkmark-circle-outline"
+                color={color}
+                size={size}
+              />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Stone"
+        component={Stone}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            console.log(focused);
+            return (
+              <Ionicons name="aperture-outline" color={color} size={size} />
+            );
+          },
+        }}
+      />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Award" component={Award} />
     </Tab.Navigator>
