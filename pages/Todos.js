@@ -1,20 +1,53 @@
 import React from "react";
 import styleApp from "../style/styleApp";
+import { Ionicons } from "@expo/vector-icons";
 import {
   MainContainer,
   Header,
   HeaderTitle,
   BackgroundContainer,
+  TodoListContainer,
+  TodoBox,
+  Todo,
+  ProcessStatus,
+  DueDate,
+  TodoTitle,
 } from "../style/styleTodos";
 
 const Todos = () => {
   return (
-    <MainContainer>
+    <>
       <BackgroundContainer source={require("../design/bg/ToDoList_BG.png")} />
-      <Header>
-        <HeaderTitle>To Do List</HeaderTitle>
-      </Header>
-    </MainContainer>
+      <MainContainer>
+        <Header>
+          <HeaderTitle>To Do List</HeaderTitle>
+        </Header>
+        <TodoListContainer
+          data={[
+            { key: "In Class Problem #1", process: true },
+            { key: "In Class Problem #2", process: true },
+            { key: "In Class Problem #3", process: true },
+            { key: "In Class Problem #4", process: true },
+            { key: "In Class Problem #5", process: true },
+            { key: "In Class Problem #6", process: false },
+          ]}
+          renderItem={({ item }) => (
+            <TodoBox>
+              <Todo>
+                <TodoTitle>{item.key}</TodoTitle>
+              </Todo>
+              <ProcessStatus>
+                {item.process ? (
+                  <Ionicons name="md-checkmark-sharp" color="green" size={24} />
+                ) : (
+                  <DueDate>09.01</DueDate>
+                )}
+              </ProcessStatus>
+            </TodoBox>
+          )}
+        ></TodoListContainer>
+      </MainContainer>
+    </>
   );
 };
 
