@@ -1,6 +1,7 @@
 import React from "react";
 import styleApp from "../style/styleApp";
 import { Ionicons } from "@expo/vector-icons";
+import { Text } from "react-native";
 import {
   MainContainer,
   Header,
@@ -12,6 +13,7 @@ import {
   ProcessStatus,
   DueDate,
   TodoTitle,
+  AfterBox,
 } from "../style/styleTodos";
 
 const Todos = () => {
@@ -32,18 +34,25 @@ const Todos = () => {
             { key: "In Class Problem #6", process: false },
           ]}
           renderItem={({ item }) => (
-            <TodoBox>
-              <Todo>
-                <TodoTitle>{item.key}</TodoTitle>
-              </Todo>
-              <ProcessStatus>
-                {item.process ? (
-                  <Ionicons name="md-checkmark-sharp" color="green" size={24} />
-                ) : (
-                  <DueDate>09.01</DueDate>
-                )}
-              </ProcessStatus>
-            </TodoBox>
+            <>
+              <TodoBox>
+                <Todo>
+                  <TodoTitle>{item.key}</TodoTitle>
+                </Todo>
+                <ProcessStatus>
+                  {item.process ? (
+                    <Ionicons
+                      name="md-checkmark-sharp"
+                      color="green"
+                      size={24}
+                    />
+                  ) : (
+                    <DueDate>09.01</DueDate>
+                  )}
+                </ProcessStatus>
+              </TodoBox>
+              <AfterBox />
+            </>
           )}
         ></TodoListContainer>
       </MainContainer>
