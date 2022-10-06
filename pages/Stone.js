@@ -1,17 +1,37 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import styleApp from "../style/styleApp";
-import styles from "../style/styleStone";
+import {
+  MainContainer,
+  Header,
+  HeaderTitle,
+  BackgroundContainer,
+  StoneExpContainer,
+  StoneExpTextCurrent,
+  StoneExpTextMax,
+  StoneImageContainer,
+  StoneImage,
+} from "../style/styleStone";
 
 const Stone = () => {
   return (
-    <View>
-      <Image
-        style={styleApp.uiOverlay}
-        source={require("../design/ui/UI_MainPage_iOS.png")}
-        resizeMode="contain"
-      />
-    </View>
+    <>
+      <BackgroundContainer source={require("../design/bg/Stone_BG.png")} />
+      <MainContainer>
+        <Header>
+          <HeaderTitle>STONE PROGRESS</HeaderTitle>
+        </Header>
+        <StoneExpContainer>
+          <StoneExpTextCurrent>1029</StoneExpTextCurrent>
+          <StoneExpTextMax>/2000</StoneExpTextMax>
+        </StoneExpContainer>
+        <StoneImageContainer>
+          <StoneImage
+            source={require("../design/ui/stone/stones/example.png")}
+          />
+        </StoneImageContainer>
+      </MainContainer>
+    </>
   );
 };
 
