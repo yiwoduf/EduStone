@@ -26,7 +26,7 @@ export const BackgroundContainer = styled.Image`
 export const Header = styled.View`
   display: flex;
   justify-content: center;
-  height: ${height * 0.1}px;
+  height: ${height * 0.08}px;
   width: ${width}px;
   padding-left: ${width * 0.03}px;
 `;
@@ -36,12 +36,12 @@ export const HeaderTitle = styled.Text`
   letter-spacing: 1px;
   color: white;
   padding-left: ${width * 0.03}px;
-  font-size: 30px;
+  font-size: ${width * 0.07}px;
 `;
 
 export const TodoListContainer = styled.FlatList`
   height: 100%;
-  width: ${width * 0.935}px;
+  width: 100%;
 `;
 
 export const TodoBox = styled.View`
@@ -50,7 +50,7 @@ export const TodoBox = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: ${width * 0.9}px;
+  width: ${width * 0.89}px;
   height: ${height * 0.065}px;
   margin-bottom: ${height * 0.015}px;
   padding-left: ${width * 0.05}px;
@@ -70,7 +70,7 @@ export const Todo = styled.View``;
 
 export const TodoTitle = styled.Text`
   font-family: ${basicFont};
-  font-size: ${contentFontSize};
+  font-size: ${width * contentFontSize}px;
   color: white;
 `;
 
@@ -81,5 +81,24 @@ export const ProcessStatus = styled.View`
 export const DueDate = styled.Text`
   font-family: ${basicFont};
   color: white;
-  font-size: ${contentFontSize};
+  font-size: ${width * contentFontSize}px;
+`;
+
+export const ProgressBar = styled.View`
+  width: ${width * 0.13}px;
+  height: ${height * 0.01}px;
+  background-color: #373737;
+`
+
+export const GradeBar = styled(ProgressBar)`
+  width: ${(props) => props.grade / 100 * width * 0.13}px;
+  background-color: ${props => {
+    if (props.grade < 60) {
+      return "#FF1F2A";
+    } else if(props.grade < 80) {
+      return "#FFCD1F";
+    } else {
+      return "#00DE4E"
+    }
+  }}
 `;
