@@ -38,6 +38,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/neodgm.ttf</string>
+		<string>Fonts/DungGeunMo.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>

@@ -1,2 +1,2 @@
-export const basicFont = "NeoDunggeunmo-Regular";
+export const basicFont = "DungGeunMo";
 export const contentFontSize = 0.046;

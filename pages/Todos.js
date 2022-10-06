@@ -24,18 +24,48 @@ const Todos = () => {
       <BackgroundContainer source={require("../design/bg/ToDoList_BG.png")} />
       <MainContainer>
         <Header>
-          <HeaderTitle>To Do List</HeaderTitle>
+          <HeaderTitle>TO-DO LIST</HeaderTitle>
         </Header>
         <TodoListContainer
           data={[
-            { key: "In Class Problem #1", process: true, complete: true, graded: false },
-            { key: "In Class Problem #2", process: true, complete: true, graded: false },
-            { key: "In Class Problem #3", process: true, complete: true, graded: false },
-            { key: "In Class Problem #4", process: true, complete: true, graded: true },
-            { key: "In Class Problem #5", process: true, complete: false, graded: false },
-            { key: "In Class Problem #6", process: false, complete: false, graded: false },
+            {
+              key: "In Class Problem #1",
+              process: true,
+              complete: true,
+              graded: false,
+            },
+            {
+              key: "In Class Problem #2",
+              process: true,
+              complete: true,
+              graded: false,
+            },
+            {
+              key: "In Class Problem #3",
+              process: true,
+              complete: true,
+              graded: false,
+            },
+            {
+              key: "In Class Problem #4",
+              process: true,
+              complete: true,
+              graded: true,
+            },
+            {
+              key: "In Class Problem #5",
+              process: true,
+              complete: false,
+              graded: false,
+            },
+            {
+              key: "In Class Problem #6",
+              process: false,
+              complete: false,
+              graded: false,
+            },
           ]}
-          contentContainerStyle={{flexGrow: 1, alignItems: 'center'}}
+          contentContainerStyle={{ flexGrow: 1, alignItems: "center" }}
           renderItem={({ item }) => (
             <>
               <TodoBox>
@@ -46,18 +76,19 @@ const Todos = () => {
                   {item.process ? (
                     item.complete ? (
                       item.graded ? (
-                        <ProgressBar><GradeBar grade="80"></GradeBar></ProgressBar>
-                      ) : (<Ionicons
-                        name="md-checkmark-sharp"
-                        color="#3DFE0B"
-                        size={30}
-                      />)
-                    ) : 
-                    (<Ionicons
-                      name="close"
-                      color="#FF1F2A"
-                      size={30}
-                    />)
+                        <ProgressBar>
+                          <GradeBar grade="80"></GradeBar>
+                        </ProgressBar>
+                      ) : (
+                        <Ionicons
+                          name="md-checkmark-sharp"
+                          color="#3DFE0B"
+                          size={30}
+                        />
+                      )
+                    ) : (
+                      <Ionicons name="close" color="#FF1F2A" size={30} />
+                    )
                   ) : (
                     <DueDate>09.01</DueDate>
                   )}
