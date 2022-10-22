@@ -19,6 +19,7 @@ import {
 } from "../style/styleTodos";
 
 const Todos = () => {
+  const onPressHandler = () => {};
   return (
     <>
       <BackgroundContainer source={require("../design/bg/ToDoList_BG.png")} />
@@ -77,7 +78,7 @@ const Todos = () => {
                     item.complete ? (
                       item.graded ? (
                         <ProgressBar>
-                          <GradeBar grade="80"></GradeBar>
+                          <GradeBar grade="50"></GradeBar>
                         </ProgressBar>
                       ) : (
                         <Ionicons
