@@ -52,7 +52,7 @@ export const TodoBox = styled.View`
   justify-content: space-between;
   width: ${width * 0.89}px;
   height: ${height * 0.065}px;
-  margin-bottom: ${height * 0.015}px;
+  margin-top: ${(props) => (props.index != 0 ? height * 0.015 : 0)}px;
   padding-left: ${width * 0.05}px;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
@@ -88,17 +88,32 @@ export const ProgressBar = styled.View`
   width: ${width * 0.13}px;
   height: ${height * 0.01}px;
   background-color: #373737;
-`
+`;
 
 export const GradeBar = styled(ProgressBar)`
-  width: ${(props) => props.grade / 100 * width * 0.13}px;
-  background-color: ${props => {
+  width: ${(props) => (props.grade / 100) * width * 0.13}px;
+  background-color: ${(props) => {
     if (props.grade < 60) {
       return "#FF1F2A";
-    } else if(props.grade < 80) {
+    } else if (props.grade < 80) {
       return "#FFCD1F";
     } else {
-      return "#00DE4E"
+      return "#00DE4E";
     }
-  }}
+  }};
 `;
+
+export const PopupInfo = styled.View`
+  display: flex;
+  flex-direction: column;
+  width: ${width * 0.89 + 5}px;
+  height: ${height * 0.15}px;
+  margin-top: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+`;
+
+export const SubmitionInfo = styled.View``;
+
+export const DueDateInfoText = styled.Text``;
+
+export const SubmittedInfoText = styled.Text``;
