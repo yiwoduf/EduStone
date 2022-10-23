@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styleApp from "../style/styleApp";
 import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import {
   MainContainer,
   Header,
@@ -16,10 +16,16 @@ import {
   AfterBox,
   ProgressBar,
   GradeBar,
+  PopupInfo,
 } from "../style/styleTodos";
+import {
+  Collapse,
+  CollapseHeader,
+  CollapseBody,
+  AccordionList,
+} from "accordion-collapse-react-native";
 
 const Todos = () => {
-  const onPressHandler = () => {};
   return (
     <>
       <BackgroundContainer source={require("../design/bg/ToDoList_BG.png")} />
@@ -67,35 +73,42 @@ const Todos = () => {
             },
           ]}
           contentContainerStyle={{ flexGrow: 1, alignItems: "center" }}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <>
-              <TodoBox>
-                <Todo>
-                  <TodoTitle>{item.key}</TodoTitle>
-                </Todo>
-                <ProcessStatus>
-                  {item.process ? (
-                    item.complete ? (
-                      item.graded ? (
-                        <ProgressBar>
-                          <GradeBar grade="50"></GradeBar>
-                        </ProgressBar>
+              <Collapse>
+                <CollapseHeader>
+                  <TodoBox index={index}>
+                    <Todo>
+                      <TodoTitle>{item.key}</TodoTitle>
+                    </Todo>
+                    <ProcessStatus>
+                      {item.process ? (
+                        item.complete ? (
+                          item.graded ? (
+                            <ProgressBar>
+                              <GradeBar grade="50"></GradeBar>
+                            </ProgressBar>
+                          ) : (
+                            <Ionicons
+                              name="md-checkmark-sharp"
+                              color="#3DFE0B"
+                              size={30}
+                            />
+                          )
+                        ) : (
+                          <Ionicons name="close" color="#FF1F2A" size={30} />
+                        )
                       ) : (
-                        <Ionicons
-                          name="md-checkmark-sharp"
-                          color="#3DFE0B"
-                          size={30}
-                        />
-                      )
-                    ) : (
-                      <Ionicons name="close" color="#FF1F2A" size={30} />
-                    )
-                  ) : (
-                    <DueDate>09.01</DueDate>
-                  )}
-                </ProcessStatus>
-              </TodoBox>
-              <AfterBox />
+                        <DueDate>09.01</DueDate>
+                      )}
+                    </ProcessStatus>
+                  </TodoBox>
+                  <AfterBox />
+                </CollapseHeader>
+                <CollapseBody>
+                  <PopupInfo></PopupInfo>
+                </CollapseBody>
+              </Collapse>
             </>
           )}
         ></TodoListContainer>
