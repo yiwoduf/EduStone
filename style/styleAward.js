@@ -20,7 +20,14 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: StatusBar.currentHeight,
-    backgroundColor: "#1d2951",
+    // backgroundColor: "#1d2951",
+    // backgroundImage: url("../design/bg/AwardList_BG.png"),
+  },
+  backgroundImageStyle: {
+    position: "absolute",
+    zIndex: -1,
+    maxHeight: height + StatusBar.currentHeight,
+    maxWidth: width,
   },
   scrollView: {},
   titleWrapper: {
@@ -41,20 +48,23 @@ export default StyleSheet.create({
   badgesWrapper: {
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "center", //vertical
+    justifyContent: "space-evenly", //horizontal
     borderColor: "#000",
     borderWidth: 2,
     marginBottom: 16,
+    // maxHeight: "40%",
   },
   badge: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
     margin: 5,
-    minHeight: 80,
-    minWidth: 80,
-    backgroundColor: "#00ff00",
+    minHeight: width * 0.2,
+    minWidth: width * .2,
+  },
+  badgeImage: {
+    height: width * 0.2,
+    width: width * .2,
   },
   sectionTitleWrapper: {
     flexDirection: "row",
@@ -82,9 +92,8 @@ export default StyleSheet.create({
     padding: 10,
   },
   awardImage: {
-    minWidth: 30,
-    minHeight: 30,
-    backgroundColor: "#ffff00",
+    width: width * 0.1,
+    height: width * 0.1,
   },
   awardTitleWrapper: {
     flex: 1,
