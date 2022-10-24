@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import * as Font from "expo-font";
+import { useFonts } from 'expo-font';
 import { Text, Image, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset, useAssets } from "expo-asset";
@@ -14,6 +15,9 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [ready, setReady] = useState(false);
+  const [fontsLoaded] = useFonts({
+    'DungGeunMo': require('./design/fonts/DungGeunMo.ttf'),
+  });
 
   useEffect(() => {
     async function prepare() {
@@ -33,7 +37,7 @@ export default function App() {
   }, []);
 
   const onLayoutRootView = useCallback(async () => {
-    if (ready) {
+    if (ready && fontsLoaded) {
       // This tells the splash screen to hide immediately! If we call this after
       // `setAppIsReady`, then we may see a blank screen while the app is
       // loading its initial state and rendering its first pixels. So instead,

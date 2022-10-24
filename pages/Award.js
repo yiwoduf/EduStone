@@ -21,6 +21,7 @@ const Award = () => {
     // ^ same for awards
     // Things are only copypasted a lot to simulate populated pages
     <SafeAreaView style={styles.safeAV}>
+      <Image source={require("../design/bg/AwardList_BG.png")} style={styles.backgroundImageStyle}></Image>
       <ScrollView style={styles.scrollView}>
         <View style={styles.titleWrapper}>
           <Text style={styles.titleText}>AWARDS & BADGES</Text>
@@ -28,28 +29,28 @@ const Award = () => {
 
         <View style={styles.badgesWrapper}>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_BLUE.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_GREEN.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_LPURPLE.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_PURPLE.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_RED.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_TEAL.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_WHITE.png")} style={styles.badgeImage}></Image>
           </View>
           <View style={styles.badge}>
-            <Text style={styles.text}>Badge</Text>
+            <Image source={require("../design/ui/award/badges/badge_YELLOW.png")} style={styles.badgeImage}></Image>
           </View>
         </View>
 
@@ -59,73 +60,81 @@ const Award = () => {
 
         <View style={styles.awardSectionWrapper}>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
+            </View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
           </View>
           <View style={styles.award}>
-            <View style={styles.awardImage}></View>
-            <View style={styles.awardTitleWrapper}>
-              <Text style={styles.titleText}>Award</Text>
+            <View>
+              <Image source={require("../design/ui/award/achievements/achievement_circle.png")} style={styles.awardImage}></Image>
             </View>
-          </View>
-          <View style={styles.award}>
-            <View style={styles.awardImage}></View>
-            <View style={styles.awardTitleWrapper}>
-              <Text style={styles.titleText}>Award</Text>
-            </View>
-          </View>
-          <View style={styles.award}>
-            <View style={styles.awardImage}></View>
             <View style={styles.awardTitleWrapper}>
               <Text style={styles.titleText}>Award</Text>
             </View>
