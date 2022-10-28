@@ -1,8 +1,9 @@
 {
   "expo": {
     "splash": {
-      "image": "./assets/WIP.png",
-      "backgroundColor": "#1d2951"
+      "image": "./design/appicons/App_Icon.png",
+      "backgroundColor": "#1d2951",
+      "resizeMode": "native"
     },
     "name": "EduStone",
     "slug": "EduStone",
