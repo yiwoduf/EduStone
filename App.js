@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import * as Font from "expo-font";
-import { useFonts } from 'expo-font';
+import { useFonts } from "expo-font";
 import { Text, Image, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset, useAssets } from "expo-asset";
@@ -16,7 +16,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [ready, setReady] = useState(false);
   const [fontsLoaded] = useFonts({
-    'DungGeunMo': require('./design/fonts/DungGeunMo.ttf'),
+    DungGeunMo: require("./design/fonts/DungGeunMo.ttf"),
   });
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function App() {
       // performed layout.
       await SplashScreen.hideAsync();
     }
-  }, [ready]);
+  }, [ready, fontsLoaded]);
 
   if (!ready) {
     return null;
