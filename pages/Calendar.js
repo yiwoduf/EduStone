@@ -1,13 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import styleApp from "../style/styleApp";
-import styles from "../style/styleProfile";
+import { MainContainer, BackgroundContainer } from "../style/styleCalendar";
 
 const Calendar = () => {
   return (
-    <View style={styles.wrapper}>
-      <Text style={styles.text}>Calendar</Text>
-    </View>
+    <>
+      <BackgroundContainer
+        source={require("../design/ui/UI_Calendar_iOS.png")}
+      />
+      <MainContainer></MainContainer>
+    </>
   );
 };
 
