@@ -61,7 +61,7 @@ export const StoneExpTextMax = styled.Text`
 `;
 
 export const StoneImageContainer = styled.View`
-  shadow-color: #139660;
+  shadow-color: #ff5bda;
   shadow-opacity: 0.4;
   shadow-radius: 20px;
 `;
