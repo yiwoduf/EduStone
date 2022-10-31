@@ -45,6 +45,7 @@ export const TodoListContainer = styled.FlatList`
 `;
 
 export const TodoBox = styled.View`
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -108,14 +109,20 @@ export const GradeBar = styled(ProgressBar)`
 export const PopupInfo = styled.View`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: ${width * 0.89 + 5}px;
   height: ${height * 0.15}px;
   margin-top: 5px;
   background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 0px 20px 15px;
 `;
 
-export const SubmitionInfo = styled.View``;
+export const InfoTextWrapper = styled.View`
+  width: 100%;
+`;
 
-export const DueDateInfoText = styled.Text``;
-
-export const SubmittedInfoText = styled.Text``;
+export const InfoText = styled.Text`
+  font-family: ${basicFont};
+  font-size: ${width * contentFontSize}px;
+  color: white;
+`;

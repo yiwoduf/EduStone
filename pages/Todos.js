@@ -17,12 +17,13 @@ import {
   ProgressBar,
   GradeBar,
   PopupInfo,
+  InfoText,
+  InfoTextWrapper,
 } from "../style/styleTodos";
 import {
   Collapse,
   CollapseHeader,
   CollapseBody,
-  AccordionList,
 } from "accordion-collapse-react-native";
 
 const Todos = () => {
@@ -106,7 +107,16 @@ const Todos = () => {
                   <AfterBox index={index} />
                 </CollapseHeader>
                 <CollapseBody>
-                  <PopupInfo></PopupInfo>
+                  <PopupInfo>
+                    <InfoTextWrapper>
+                      <InfoText>Due: Sun Sep 4, 2022 11:59PM</InfoText>
+                      <InfoText>Submitted: Sep 4, 2022 8:30PM</InfoText>
+                    </InfoTextWrapper>
+                    <InfoTextWrapper>
+                      <InfoText>Attempt 1 Score: NOT GRADED</InfoText>
+                      <InfoText>POINTS EARNED: N/A</InfoText>
+                    </InfoTextWrapper>
+                  </PopupInfo>
                 </CollapseBody>
               </Collapse>
             </>
