@@ -74,7 +74,8 @@ export const Todo = styled.View``;
 export const TodoTitle = styled.Text`
   font-family: ${basicFont};
   font-size: ${width * contentFontSize}px;
-  color: white;
+  color: ${(props) => (props.complete ? "white" : "#FF1F2A")};
+  opacity: ${(props) => (props.process ? "0.4" : "1")};
 `;
 
 export const ProcessStatus = styled.View`

@@ -38,13 +38,13 @@ const Todos = () => {
           data={[
             {
               key: "In Class Problem #1",
-              process: true,
+              process: false,
               complete: true,
               graded: false,
             },
             {
               key: "In Class Problem #2",
-              process: true,
+              process: false,
               complete: true,
               graded: false,
             },
@@ -68,8 +68,8 @@ const Todos = () => {
             },
             {
               key: "In Class Problem #6",
-              process: false,
-              complete: false,
+              process: true,
+              complete: true,
               graded: false,
             },
           ]}
@@ -80,14 +80,19 @@ const Todos = () => {
                 <CollapseHeader>
                   <TodoBox index={index}>
                     <Todo>
-                      <TodoTitle>{item.key}</TodoTitle>
+                      <TodoTitle
+                        process={item.process}
+                        complete={item.complete}
+                      >
+                        {item.key}
+                      </TodoTitle>
                     </Todo>
                     <ProcessStatus>
                       {item.process ? (
                         item.complete ? (
                           item.graded ? (
                             <ProgressBar>
-                              <GradeBar grade="50"></GradeBar>
+                              <GradeBar grade="70"></GradeBar>
                             </ProgressBar>
                           ) : (
                             <Ionicons
