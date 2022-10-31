@@ -52,16 +52,18 @@ export const TodoBox = styled.View`
   justify-content: space-between;
   width: ${width * 0.89}px;
   height: ${height * 0.065}px;
-  margin-top: ${(props) => (props.index != 0 ? height * 0.015 : 0)}px;
+  margin-top: ${(props) => (props.index > 0 ? height * 0.015 : 0)}px;
   padding-left: ${width * 0.05}px;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
 `;
 
-export const AfterBox = styled(TodoBox)`
+export const AfterBox = styled.View`
   position: absolute;
-  top: 5px;
+  top: ${(props) => (props.index > 0 ? 20 : 7)}px;
   left: 5px;
+  width: ${width * 0.89}px;
+  height: ${height * 0.065}px;
   background-color: rgba(0, 0, 0, 0.25);
   z-index: 1;
 `;

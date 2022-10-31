@@ -103,7 +103,7 @@ const Todos = () => {
                       )}
                     </ProcessStatus>
                   </TodoBox>
-                  <AfterBox />
+                  <AfterBox index={index} />
                 </CollapseHeader>
                 <CollapseBody>
                   <PopupInfo></PopupInfo>
