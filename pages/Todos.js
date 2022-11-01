@@ -17,12 +17,13 @@ import {
   ProgressBar,
   GradeBar,
   PopupInfo,
+  InfoText,
+  InfoTextWrapper,
 } from "../style/styleTodos";
 import {
   Collapse,
   CollapseHeader,
   CollapseBody,
-  AccordionList,
 } from "accordion-collapse-react-native";
 
 const Todos = () => {
@@ -37,13 +38,13 @@ const Todos = () => {
           data={[
             {
               key: "In Class Problem #1",
-              process: true,
+              process: false,
               complete: true,
               graded: false,
             },
             {
               key: "In Class Problem #2",
-              process: true,
+              process: false,
               complete: true,
               graded: false,
             },
@@ -67,8 +68,8 @@ const Todos = () => {
             },
             {
               key: "In Class Problem #6",
-              process: false,
-              complete: false,
+              process: true,
+              complete: true,
               graded: false,
             },
           ]}
@@ -79,14 +80,19 @@ const Todos = () => {
                 <CollapseHeader>
                   <TodoBox index={index}>
                     <Todo>
-                      <TodoTitle>{item.key}</TodoTitle>
+                      <TodoTitle
+                        process={item.process}
+                        complete={item.complete}
+                      >
+                        {item.key}
+                      </TodoTitle>
                     </Todo>
                     <ProcessStatus>
                       {item.process ? (
                         item.complete ? (
                           item.graded ? (
                             <ProgressBar>
-                              <GradeBar grade="50"></GradeBar>
+                              <GradeBar grade="70"></GradeBar>
                             </ProgressBar>
                           ) : (
                             <Ionicons
@@ -103,10 +109,19 @@ const Todos = () => {
                       )}
                     </ProcessStatus>
                   </TodoBox>
-                  <AfterBox />
+                  <AfterBox index={index} />
                 </CollapseHeader>
                 <CollapseBody>
-                  <PopupInfo></PopupInfo>
+                  <PopupInfo>
+                    <InfoTextWrapper>
+                      <InfoText>Due: Sun Sep 4, 2022 11:59PM</InfoText>
+                      <InfoText>Submitted: Sep 4, 2022 8:30PM</InfoText>
+                    </InfoTextWrapper>
+                    <InfoTextWrapper>
+                      <InfoText>Attempt 1 Score: NOT GRADED</InfoText>
+                      <InfoText>POINTS EARNED: N/A</InfoText>
+                    </InfoTextWrapper>
+                  </PopupInfo>
                 </CollapseBody>
               </Collapse>
             </>

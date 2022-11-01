@@ -45,6 +45,7 @@ export const TodoListContainer = styled.FlatList`
 `;
 
 export const TodoBox = styled.View`
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -52,16 +53,18 @@ export const TodoBox = styled.View`
   justify-content: space-between;
   width: ${width * 0.89}px;
   height: ${height * 0.065}px;
-  margin-top: ${(props) => (props.index != 0 ? height * 0.015 : 0)}px;
+  margin-top: ${(props) => (props.index > 0 ? height * 0.015 : 0)}px;
   padding-left: ${width * 0.05}px;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
 `;
 
-export const AfterBox = styled(TodoBox)`
+export const AfterBox = styled.View`
   position: absolute;
-  top: 5px;
+  top: ${(props) => (props.index > 0 ? 20 : 7)}px;
   left: 5px;
+  width: ${width * 0.89}px;
+  height: ${height * 0.065}px;
   background-color: rgba(0, 0, 0, 0.25);
   z-index: 1;
 `;
@@ -71,7 +74,8 @@ export const Todo = styled.View``;
 export const TodoTitle = styled.Text`
   font-family: ${basicFont};
   font-size: ${width * contentFontSize}px;
-  color: white;
+  color: ${(props) => (props.complete ? "white" : "#FF1F2A")};
+  opacity: ${(props) => (props.process ? "0.4" : "1")};
 `;
 
 export const ProcessStatus = styled.View`
@@ -106,14 +110,20 @@ export const GradeBar = styled(ProgressBar)`
 export const PopupInfo = styled.View`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: ${width * 0.89 + 5}px;
   height: ${height * 0.15}px;
   margin-top: 5px;
   background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 0px 20px 15px;
 `;
 
-export const SubmitionInfo = styled.View``;
+export const InfoTextWrapper = styled.View`
+  width: 100%;
+`;
 
-export const DueDateInfoText = styled.Text``;
-
-export const SubmittedInfoText = styled.Text``;
+export const InfoText = styled.Text`
+  font-family: ${basicFont};
+  font-size: ${width * contentFontSize}px;
+  color: white;
+`;

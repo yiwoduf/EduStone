@@ -2,6 +2,10 @@
 
 Don't Do Your Assignments, PLAY Your Assignments!
 
+![Figure 6](./design/preview/NewUIPreview0.png "Preview New UI")
+
+![Figure 7](./design/preview/NewUIPreview1.png "Preview New UI2")
+
 ![Figure 1](./design/preview/Preview.png "Preview 1")
 
 ![Figure 2](./design/preview/Preview2.png "Preview 2")
