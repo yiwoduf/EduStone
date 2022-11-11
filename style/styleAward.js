@@ -40,6 +40,7 @@ export const HeaderTitle = styled.Text`
 
 export const BadgeContainer = styled.View`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

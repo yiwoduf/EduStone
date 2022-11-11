@@ -16,6 +16,8 @@ import {
   AwardTitleContainer,
 } from "../style/styleAward";
 
+import { Badges, Awards } from "./content_population/AwardPopulation.js";
+
 const Award = () => {
   return (
     <>
@@ -24,105 +26,15 @@ const Award = () => {
         <Header>
           <HeaderTitle>AWARDS & BADGES</HeaderTitle>
         </Header>
-        <BadgeContainer>
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_BLUE.png")}
-          />
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_GREEN.png")}
-          />
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_LPURPLE.png")}
-          />
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_PURPLE.png")}
-          />
-        </BadgeContainer>
-        <BadgeContainer>
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_RED.png")}
-          />
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_TEAL.png")}
-          />
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_WHITE.png")}
-          />
-          <BadgeImage
-            source={require("../design/ui/award/badges/badge_YELLOW.png")}
-          />
-        </BadgeContainer>
+
+        <Badges/>
+
         <SectionTitle>
           <SectionTitleText>AWARD HISTORY</SectionTitleText>
         </SectionTitle>
-        <ScrollView>
-          <AwardListContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-            <AwardComponentContainer>
-              <AwardImage
-                source={require("../design/ui/award/achievements/achievement_circle.png")}
-              />
-              <AwardTitleContainer>
-                <AwardTitle>Award</AwardTitle>
-              </AwardTitleContainer>
-            </AwardComponentContainer>
-          </AwardListContainer>
-        </ScrollView>
+
+        <Awards/>
+        
       </MainContainer>
     </>
   );
