@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import * as Font from "expo-font";
-import { useFonts } from 'expo-font';
+import { useFonts } from "expo-font";
 import { Text, Image, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset, useAssets } from "expo-asset";
@@ -16,7 +16,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [ready, setReady] = useState(false);
   const [fontsLoaded] = useFonts({
-    'DungGeunMo': require('./design/fonts/DungGeunMo.ttf'),
+    DungGeunMo: require("./design/fonts/DungGeunMo.ttf"),
   });
 
   useEffect(() => {
@@ -24,8 +24,34 @@ export default function App() {
       try {
         // Pre-load fonts, make any API calls you need to do here
         // await Font.loadAsync(Ionicons.font);
-        const fonts = loadFonts([Ionicons.font]);
-        await Promise.all([...fonts]);
+        const fontsToLoad = [Ionicons.font];
+        const fontPromises = fontsToLoad.map((font) => Font.loadAsync(font));
+        const imagesToLoad = [
+          require("./design/ui/award/badges/badge_BLUE.png"),
+          require("./design/ui/award/badges/badge_GREEN.png"),
+          require("./design/ui/award/badges/badge_LPURPLE.png"),
+          require("./design/ui/award/badges/badge_PURPLE.png"),
+          require("./design/ui/award/badges/badge_RED.png"),
+          require("./design/ui/award/badges/badge_TEAL.png"),
+          require("./design/ui/award/badges/badge_WHITE.png"),
+          require("./design/ui/award/badges/badge_YELLOW.png"),
+          require("./design/bg/AwardList_BG.png"),
+          require("./design/bg/Profile_BG.png"),
+          require("./design/bg/Stone_BG.png"),
+          require("./design/bg/ToDoList_BG.png"),
+          require("./design/ui/profile/profile_characters/example.png"),
+          require("./design/ui/profile/menus/icon_about.png"),
+          require("./design/ui/profile/menus/icon_guide.png"),
+          require("./design/ui/profile/menus/icon_notifications.png"),
+          require("./design/ui/profile/menus/icon_report.png"),
+          require("./design/ui/profile/menus/icon_theme.png"),
+          require("./design/ui/stone/stones/heart_stone.png"),
+          require("./design/ui/UI_Calendar_iOS.png"),
+        ];
+        const imagePromises = imagesToLoad.map((image) =>
+          Asset.loadAsync(image)
+        );
+        await Promise.all([...fontPromises, ...imagePromises]);
       } catch (e) {
         console.warn(e);
       } finally {
@@ -45,7 +71,7 @@ export default function App() {
       // performed layout.
       await SplashScreen.hideAsync();
     }
-  }, [ready]);
+  }, [ready, fontsLoaded]);
 
   if (!ready) {
     return null;

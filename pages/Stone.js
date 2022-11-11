@@ -27,7 +27,7 @@ const Stone = () => {
         </StoneExpContainer>
         <StoneImageContainer>
           <StoneImage
-            source={require("../design/ui/stone/stones/example.png")}
+            source={require("../design/ui/stone/stones/heart_stone.png")}
           />
         </StoneImageContainer>
       </MainContainer>
