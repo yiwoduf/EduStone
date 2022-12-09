@@ -10,6 +10,95 @@ import * as SplashScreen from "expo-splash-screen";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
+export const userData = {
+  content: {
+      userBadges: [
+          {
+              key: "testUID0",
+              component: "badge0",
+              source: require("./design/ui/award/badges/badge_BLUE.png")
+          },
+          {
+              key: "testUID1",
+              component: "badge1",
+              source: require("./design/ui/award/badges/badge_GREEN.png")
+          },
+          {
+              key: "testUID2",
+              component: "badge2",
+              source: require("./design/ui/award/badges/badge_LPURPLE.png")
+          },
+          {
+              key: "testUID3",
+              component: "badge3",
+              source: require("./design/ui/award/badges/badge_PURPLE.png")
+          },
+          {
+              key: "testUID4",
+              component: "badge4",
+              source: require("./design/ui/award/badges/badge_RED.png")
+          },
+          {
+              key: "testUID5",
+              component: "badge5",
+              source: require("./design/ui/award/badges/badge_TEAL.png")
+          },
+          {
+              key: "testUID6",
+              component: "badge6",
+              source: require("./design/ui/award/badges/badge_WHITE.png")
+          },
+          {
+              key: "testUID7",
+              component: "badge7",
+              source: require("./design/ui/award/badges/badge_YELLOW.png")
+          }
+      ],
+      userAwards: [
+          {
+              key: "awardUID0",
+              component: "award0",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID1",
+              component: "award1",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID2",
+              component: "award2",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID3",
+              component: "award3",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID4",
+              component: "award4",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID5",
+              component: "award5",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID6",
+              component: "award6",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+          {
+              key: "awardUID7",
+              component: "award7",
+              source: require("./design/ui/award/achievements/achievement_circle.png")
+          },
+      ]
+  }
+};
+
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
@@ -24,8 +113,34 @@ export default function App() {
       try {
         // Pre-load fonts, make any API calls you need to do here
         // await Font.loadAsync(Ionicons.font);
-        const fonts = loadFonts([Ionicons.font]);
-        await Promise.all([...fonts]);
+        const fontsToLoad = [Ionicons.font];
+        const fontPromises = fontsToLoad.map((font) => Font.loadAsync(font));
+        const imagesToLoad = [
+          require("./design/ui/award/badges/badge_BLUE.png"),
+          require("./design/ui/award/badges/badge_GREEN.png"),
+          require("./design/ui/award/badges/badge_LPURPLE.png"),
+          require("./design/ui/award/badges/badge_PURPLE.png"),
+          require("./design/ui/award/badges/badge_RED.png"),
+          require("./design/ui/award/badges/badge_TEAL.png"),
+          require("./design/ui/award/badges/badge_WHITE.png"),
+          require("./design/ui/award/badges/badge_YELLOW.png"),
+          require("./design/bg/AwardList_BG.png"),
+          require("./design/bg/Profile_BG.png"),
+          require("./design/bg/Stone_BG.png"),
+          require("./design/bg/ToDoList_BG.png"),
+          require("./design/ui/profile/profile_characters/example.png"),
+          require("./design/ui/profile/menus/icon_about.png"),
+          require("./design/ui/profile/menus/icon_guide.png"),
+          require("./design/ui/profile/menus/icon_notifications.png"),
+          require("./design/ui/profile/menus/icon_report.png"),
+          require("./design/ui/profile/menus/icon_theme.png"),
+          require("./design/ui/stone/stones/heart_stone.png"),
+          require("./design/ui/UI_Calendar_iOS.png"),
+        ];
+        const imagePromises = imagesToLoad.map((image) =>
+          Asset.loadAsync(image)
+        );
+        await Promise.all([...fontPromises, ...imagePromises]);
       } catch (e) {
         console.warn(e);
       } finally {
