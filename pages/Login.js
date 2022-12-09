@@ -1,6 +1,12 @@
 import React from "react";
 import LinearGradient from "react-native-linear-gradient";
-import { Dimensions } from "react-native";
+import {
+  Dimensions,
+  Platform,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import styled from "styled-components";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
@@ -16,12 +22,12 @@ const Container = styled(LinearGradient).attrs({
 
 const HeaderContainer = styled.View`
   width: 100%;
-  height: 35%;
+  height: 30%;
 `;
 
 const SigninContainer = styled.View`
   background-color: #f6f6f6;
-  height: 65%;
+  height: 90%;
   width: 100%;
   border-top-left-radius: ${SCREEN_HEIGHT * 0.05}px;
   border-top-right-radius: ${SCREEN_HEIGHT * 0.05}px;
@@ -65,7 +71,7 @@ const BtnContainer = styled.View`
   align-items: center;
   justify-content: space-between;
   height: ${SCREEN_HEIGHT * 0.12}px;
-  margin-top: ${SCREEN_HEIGHT * 0.035}px;
+  margin-top: ${SCREEN_HEIGHT * 0.015}px;
 `;
 
 const DefaultBtn = styled.View`
@@ -85,35 +91,52 @@ const LoginText = styled.Text`
 `;
 
 const Login = () => {
+  const dismissKeyboard = () => {
+    Keyboard.dismiss();
+  };
   return (
-    <Container>
-      <HeaderContainer></HeaderContainer>
-      <SigninContainer>
-        <WelcomeContainer>
-          <WelcomeText>Welcome!</WelcomeText>
-          <GuideText>Please sign in to continue</GuideText>
-        </WelcomeContainer>
+    <TouchableWithoutFeedback
+      style={{ flex: 1 }}
+      onPress={dismissKeyboard}
+      disabled={Platform.OS === "web"}
+    >
+      <Container>
+        <KeyboardAvoidingView
+          style={{
+            width: "100%",
+          }}
+          behavior="padding"
+          keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
+        >
+          <HeaderContainer></HeaderContainer>
+          <SigninContainer>
+            <WelcomeContainer>
+              <WelcomeText>Welcome!</WelcomeText>
+              <GuideText>Please sign in to continue</GuideText>
+            </WelcomeContainer>
 
-        <InputInfoContainer>
-          <InputInfoText>E-Mail Address</InputInfoText>
-          <InputInfo></InputInfo>
-        </InputInfoContainer>
+            <InputInfoContainer>
+              <InputInfoText>E-Mail Address</InputInfoText>
+              <InputInfo></InputInfo>
+            </InputInfoContainer>
 
-        <InputInfoContainer>
-          <InputInfoText>Password</InputInfoText>
-          <InputInfo></InputInfo>
-        </InputInfoContainer>
+            <InputInfoContainer>
+              <InputInfoText>Password</InputInfoText>
+              <InputInfo secureTextEntry></InputInfo>
+            </InputInfoContainer>
 
-        <BtnContainer>
-          <DefaultBtn btnColor="#9d4edd">
-            <LoginText>sign in</LoginText>
-          </DefaultBtn>
-          <DefaultBtn btnColor="#F8B13B">
-            <LoginText>register</LoginText>
-          </DefaultBtn>
-        </BtnContainer>
-      </SigninContainer>
-    </Container>
+            <BtnContainer>
+              <DefaultBtn btnColor="#9d4edd">
+                <LoginText>sign in</LoginText>
+              </DefaultBtn>
+              <DefaultBtn btnColor="#F8B13B">
+                <LoginText>register</LoginText>
+              </DefaultBtn>
+            </BtnContainer>
+          </SigninContainer>
+        </KeyboardAvoidingView>
+      </Container>
+    </TouchableWithoutFeedback>
   );
 };
 

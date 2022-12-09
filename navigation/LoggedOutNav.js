@@ -6,7 +6,7 @@ const Stack = createStackNavigator();
 
 export default function LoggedOutNav() {
   return (
-    <Stack.Navigator headermode="screen">
+    <Stack.Navigator>
       <Stack.Screen
         name="Login"
         component={Login}
