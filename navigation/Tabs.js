@@ -22,20 +22,26 @@ const Tabs = () => {
         tabBarStyle: {
           borderTopWidth: 0,
           elevation: 0,
+          height: 90,
+          borderRadius: 30,
+          overflow: "hidden",
+          position: "absolute",
         },
+        tabBarActiveTintColor: "#f9bd3c",
+        tabBarShowLabel: false,
         headerShown: false, // remove Header on top
         tabBarBackground: () => {
           return isDark ? (
             <View style={{ flex: 1 }}>
               <LinearGradient
-                colors={["#242424", "#3a2a31"]}
+                colors={["#f8f8f8", "#f8f8f8"]}
                 style={styleApp.linearGradient}
               ></LinearGradient>
             </View>
           ) : (
             <View style={{ flex: 1 }}>
               <LinearGradient
-                colors={["#f6fff8", "#ffe5d9"]}
+                colors={["#f8f8f8", "#f8f8f8"]}
                 style={styleApp.linearGradient}
               ></LinearGradient>
             </View>

@@ -37,8 +37,9 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/neodgm.ttf</string>
-		<string>Fonts/DungGeunMo.ttf</string>
+		<string>Fonts/BMDOHYEON_ttf.ttf</string>
+		<string>Fonts/NexaTextDemo-Light.ttf</string>
+		<string>Fonts/NexaTextDemo-Bold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
