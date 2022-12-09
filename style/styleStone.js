@@ -3,7 +3,7 @@
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-import { basicFont, contentFontSize } from "./fonts";
+import { basicFont, contentFontSize, specialFont } from "./fonts";
 import LinearGradient from "react-native-linear-gradient";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
@@ -36,7 +36,7 @@ export const PointsContainer = styled.View`
 `;
 
 export const PointsText = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${specialFont};
   color: white;
   text-align: center;
   font-size: ${SCREEN_WIDTH * 0.09}px;
@@ -78,9 +78,9 @@ export const StoneExpContainer = styled.View`
 `;
 
 export const StoneExpTextCurrent = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.23}px;
+  font-size: ${SCREEN_WIDTH * 0.18}px;
   height: 80px;
   text-shadow-color: #fff;
   text-shadow-opacity: 50%;
@@ -88,10 +88,10 @@ export const StoneExpTextCurrent = styled.Text`
 `;
 
 export const StoneExpTextMax = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${specialFont};
   color: white;
   font-size: ${SCREEN_WIDTH * 0.1}px;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const MoreInfoContainer = styled.View`
@@ -122,13 +122,13 @@ export const DescriptText = styled.Text`
 `;
 
 export const AssignmentNumText = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${specialFont};
   color: white;
   font-size: ${SCREEN_WIDTH * 0.15}px;
 `;
 
 export const AssignmentProgressText = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${specialFont};
   color: white;
   font-size: ${SCREEN_WIDTH * 0.082}px;
 `;
