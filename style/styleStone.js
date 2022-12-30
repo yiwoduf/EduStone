@@ -3,7 +3,7 @@
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-import { basicFont, contentFontSize, specialFont } from "./fonts";
+import { basicFont, contentFontSize, specialFont, boldFont } from "./fonts";
 import LinearGradient from "react-native-linear-gradient";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
@@ -82,9 +82,9 @@ export const StoneExpTextCurrent = styled.Text`
   color: white;
   font-size: ${SCREEN_WIDTH * 0.18}px;
   height: 80px;
-  text-shadow-color: #fff;
-  text-shadow-opacity: 50%;
-  text-shadow-radius: 6px;
+  text-shadow-color: #f8a444;
+  text-shadow-opacity: 10%;
+  text-shadow-radius: 12px;
 `;
 
 export const StoneExpTextMax = styled.Text`
@@ -92,6 +92,9 @@ export const StoneExpTextMax = styled.Text`
   color: white;
   font-size: ${SCREEN_WIDTH * 0.1}px;
   margin-top: 10px;
+  text-shadow-color: #f8a444;
+  text-shadow-opacity: 10%;
+  text-shadow-radius: 8px;
 `;
 
 export const MoreInfoContainer = styled.View`
@@ -109,28 +112,34 @@ export const MoreInfoContainer = styled.View`
 export const NoticeContainer = styled.View``;
 
 export const NoticeText = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${boldFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.055}px;
+  font-size: ${SCREEN_WIDTH * 0.045}px;
 `;
 
 export const DescriptText = styled.Text`
   font-family: ${basicFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.032}px;
+  font-size: ${SCREEN_WIDTH * 0.028}px;
   opacity: 0.8;
 `;
 
 export const AssignmentNumText = styled.Text`
   font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.15}px;
+  font-size: ${SCREEN_WIDTH * 0.1}px;
+  text-shadow-color: #f8a444;
+  text-shadow-opacity: 30%;
+  text-shadow-radius: 5px;
 `;
 
 export const AssignmentProgressText = styled.Text`
   font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.082}px;
+  font-size: ${SCREEN_WIDTH * 0.07}px;
+  text-shadow-color: #f8a444;
+  text-shadow-opacity: 30%;
+  text-shadow-radius: 5px;
 `;
 
 // export const StoneImageContainer = styled.View`
