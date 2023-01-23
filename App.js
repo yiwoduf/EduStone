@@ -106,7 +106,9 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [ready, setReady] = useState(false);
   const [fontsLoaded] = useFonts({
-    DungGeunMo: require("./design/fonts/DungGeunMo.ttf"),
+    BEMIN: require("./design/fonts/BMDOHYEON_ttf.ttf"),
+    NexaBold: require("./design/fonts/NexaTextDemo-Bold.ttf"),
+    NexaLight: require("./design/fonts/NexaTextDemo-Light.ttf"),
   });
 
   useEffect(() => {
