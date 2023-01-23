@@ -171,8 +171,8 @@ export default function App() {
 
   return (
     <NavigationContainer {...this}>
-      <LoggedOutNav />
-      {/* <Tabs /> */}
+      {/* <LoggedOutNav /> */}
+      <Tabs />
     </NavigationContainer>
   );
 }
