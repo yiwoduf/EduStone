@@ -124,13 +124,13 @@ export const DescriptText = styled.Text`
 export const AssignmentNumText = styled.Text`
   font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.15}px;
+  font-size: ${SCREEN_WIDTH * 0.1}px;
 `;
 
 export const AssignmentProgressText = styled.Text`
   font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.082}px;
+  font-size: ${SCREEN_WIDTH * 0.07}px;
 `;
 
 // export const StoneImageContainer = styled.View`

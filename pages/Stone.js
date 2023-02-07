@@ -49,7 +49,7 @@ const Stone = () => {
               <NoticeText>JUST "A" STUDENT</NoticeText>
               <DescriptText>KEEP UP THE GOOD WORK!</DescriptText>
             </NoticeContainer>
-            <AssignmentProgressText>96.8%</AssignmentProgressText>
+            <AssignmentProgressText>96%</AssignmentProgressText>
           </MoreInfoContainer>
         </MainContainer>
       </Container>
