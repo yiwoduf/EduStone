@@ -7,6 +7,7 @@ import { Asset, useAssets } from "expo-asset";
 import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
 import * as SplashScreen from "expo-splash-screen";
+import LoggedOutNav from "./navigation/LoggedOutNav";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
@@ -172,6 +173,7 @@ export default function App() {
 
   return (
     <NavigationContainer {...this}>
+      {/* <LoggedOutNav /> */}
       <Tabs />
     </NavigationContainer>
   );
