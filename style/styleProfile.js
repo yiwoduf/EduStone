@@ -3,7 +3,8 @@
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-import { basicFont, contentFontSize } from "./fonts";
+import { basicFont, contentFontSize, specialFont } from "./fonts";
+import LinearGradient from "react-native-linear-gradient";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
 
@@ -16,11 +17,13 @@ export const MainContainer = styled.SafeAreaView`
   width: ${SCREEN_WIDTH}px;
 `;
 
-export const BackgroundContainer = styled.Image`
-  position: absolute;
-  z-index: -1;
-  max-height: ${SCREEN_HEIGHT}px;
-  max-width: ${SCREEN_WIDTH}px;
+export const Container = styled(LinearGradient).attrs({
+  colors: ["#EFB14E", "#B880A4", "#AB4BF8"],
+  start: { x: 0, y: 0 },
+  end: { x: 1, y: 1 },
+})`
+  flex: 1;
+  justify-content: space-between;
 `;
 
 export const Header = styled.View`
@@ -53,11 +56,33 @@ export const InfoProfileContainer = styled.View`
   align-items: center;
   width: ${SCREEN_WIDTH * 0.89}px;
   height: ${SCREEN_HEIGHT * 0.075}px;
-  background-color: rgba(0, 0, 0, 0.43);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding-left: ${SCREEN_WIDTH * 0.035}px;
   padding-right: ${SCREEN_WIDTH * 0.035}px;
   margin-bottom: ${SCREEN_HEIGHT * 0.025}px;
+`;
+
+export const InfoDescriptionRow = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const InfoDescriptionLeftText = styled.Text`
+  font-family: ${basicFont};
+  color: white;
+  font-size: 16px;
+`;
+export const InfoDescriptionRightText = styled.Text`
+  font-family: ${specialFont};
+  color: white;
+  letter-spacing: 0.5px;
+`;
+
+export const InfoCol = styled.View`
+  margin-left: -40px;
 `;
 
 export const InfoProfileImage = styled.Image`
@@ -71,81 +96,55 @@ export const InfoProfileName = styled.Text`
   font-size: ${SCREEN_WIDTH * 0.063}px;
 `;
 
-export const InfoProfileMajor = styled.Text`
-  font-family: ${basicFont};
-  color: white;
-  font-size: ${SCREEN_WIDTH * 0.055}px;
+export const InfoProfileDepartment = styled(InfoProfileName)`
+  font-size: 10px;
 `;
 
-export const InfoDescriptionContainer = styled.View`
-  display: flex;
+export const InfoProfileMajor = styled.Text`
+  font-family: ${specialFont};
+  color: white;
+  font-size: ${SCREEN_WIDTH * 0.08}px;
+`;
+
+export const InfoDescriptionContainer = styled(InfoProfileContainer)`
   flex-direction: column;
-  width: ${SCREEN_WIDTH * 0.89}px;
-  height: ${SCREEN_HEIGHT * 0.25}px;
-  background-color: rgba(0, 0, 0, 0.43);
-  border-radius: 10px;
+  justify-content: space-evenly;
+  height: ${SCREEN_HEIGHT * 0.23}px;
+  border-radius: 20px;
   padding-top: ${SCREEN_WIDTH * 0.02}px;
   padding-left: ${SCREEN_WIDTH * 0.04}px;
   padding-right: ${SCREEN_WIDTH * 0.04}px;
-  margin-bottom: ${SCREEN_HEIGHT * 0.025}px;
 `;
 
-export const InfoDescriptionLine = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: ${SCREEN_WIDTH * 0.005}px;
-  margin-bottom: ${SCREEN_HEIGHT * 0.02}px;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-`;
-
-export const InfoDescriptionTextLeft = styled.Text`
-  font-family: ${basicFont};
-  color: white;
-  font-size: ${SCREEN_WIDTH * 0.038}px;
-`;
-
-export const InfoDescriptionTextRight = styled.Text`
-  font-family: ${basicFont};
-  color: white;
-  font-size: ${SCREEN_WIDTH * 0.04}px;
-`;
-
-export const InfoMenuContainer = styled.View`
-  display: flex;
+export const InfoMenuContainer = styled(InfoProfileContainer)`
+  height: ${SCREEN_HEIGHT * 0.2}px;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
 `;
 
-export const MenuRow = styled.View`
-  display: flex;
-  flex-direction: row;
-  width: ${SCREEN_WIDTH * 0.89}px;
-  justify-content: space-between;
-  margin-bottom: ${SCREEN_HEIGHT * 0.015}px;
+export const InfoMenuRow = styled.View`
+  width: 100%;
+  border-bottom-width: ${({ hasBorder }) => (hasBorder ? 1 : 0)};
+  border-bottom-color: #786074;
 `;
 
-export const MenuSingle = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: ${SCREEN_WIDTH * 0.44}px;
-  height: ${SCREEN_HEIGHT * 0.075}px;
-  background-color: rgba(0, 0, 0, 0.43);
-  border-radius: 10px;
-  padding-left: ${SCREEN_WIDTH * 0.03}px;
-  padding-right: ${SCREEN_WIDTH * 0.044}px;
-`;
+export const InfoMenuCol = styled.View``;
 
-export const MenuIcon = styled.Image`
-  max-height: ${SCREEN_HEIGHT * 0.032}px;
-  max-width: ${SCREEN_WIDTH * 0.065}px;
-`;
-
-export const MenuText = styled.Text`
+export const InfoMenuText = styled.Text`
   font-family: ${basicFont};
+  font-size: 16px;
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.055}px;
+`;
+
+export const InfoButton = styled(InfoProfileContainer)`
+  justify-content: center;
+  height: ${SCREEN_HEIGHT * 0.06}px;
+`;
+
+export const InfoButtonText = styled.Text`
+  font-family: ${specialFont};
+  color: white;
+  letter-spacing: 1.5px;
+  font-size: 16px;
 `;

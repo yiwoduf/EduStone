@@ -3,116 +3,95 @@ import {
   MainContainer,
   Header,
   HeaderTitle,
-  BackgroundContainer,
   InformationContainer,
   InfoProfileContainer,
   InfoProfileImage,
   InfoProfileName,
   InfoDescriptionContainer,
-  InfoDescriptionLine,
-  InfoDescriptionTextLeft,
-  InfoDescriptionTextRight,
+  InfoCol,
   InfoMenuContainer,
-  MenuRow,
-  MenuSingle,
-  MenuIcon,
-  MenuText,
   InfoProfileMajor,
+  Container,
+  InfoProfileDepartment,
+  InfoDescriptionRow,
+  InfoDescriptionLeftText,
+  InfoDescriptionRightText,
+  InfoMenuRow,
+  InfoMenuCol,
+  InfoMenuText,
+  InfoButton,
+  InfoButtonText,
 } from "../style/styleProfile";
+
+const profileData = [
+  { leftText: "STUDENT OF", rightText: "UNIVERSITY OF KANSAS" },
+  { leftText: "EMAIL", rightText: "JAYHAWK@KU.EDU" },
+  { leftText: "DOB", rightText: "00.00.0000" },
+  { leftText: "STUDENT ID", rightText: "0000000" },
+  { leftText: "CREDIT HR", rightText: "15 CRD" },
+  { leftText: "BADGE COUNT", rightText: "16" },
+  { leftText: "TOTAL POINTS", rightText: "23456 PTS" },
+];
+
+const menuData = [
+  "GENERAL SETTINGS",
+  "NOTIFICATIONS",
+  "PREFERENCES",
+  "APP GUIDE",
+  "REPORT ISSUE",
+  "ABOUT EDUSTONE",
+];
 
 const Stone = () => {
   return (
-    <>
-      <BackgroundContainer source={require("../design/bg/Profile_BG.png")} />
+    <Container>
       <MainContainer>
         <Header>
-          <HeaderTitle>ACCOUNT & SETTINGS</HeaderTitle>
+          <HeaderTitle>PROFILE</HeaderTitle>
         </Header>
         <InformationContainer>
           <InfoProfileContainer>
             <InfoProfileImage
               source={require("../design/ui/profile/profile_characters/example.png")}
             />
-            <InfoProfileName>David Johnson</InfoProfileName>
-            <InfoProfileMajor>EECS</InfoProfileMajor>
+            <InfoCol>
+              <InfoProfileName>TAYEON KIM</InfoProfileName>
+              <InfoProfileDepartment>
+                SCHOOL OF ENGINEERING
+              </InfoProfileDepartment>
+            </InfoCol>
+            <InfoProfileMajor>SR</InfoProfileMajor>
           </InfoProfileContainer>
           <InfoDescriptionContainer>
-            <InfoDescriptionLine>
-              <InfoDescriptionTextLeft>Student Of</InfoDescriptionTextLeft>
-              <InfoDescriptionTextRight>
-                UNIVERSITY OF KANSAS
-              </InfoDescriptionTextRight>
-            </InfoDescriptionLine>
-            <InfoDescriptionLine>
-              <InfoDescriptionTextLeft>Email</InfoDescriptionTextLeft>
-              <InfoDescriptionTextRight>
-                jayhawk@ku.edu
-              </InfoDescriptionTextRight>
-            </InfoDescriptionLine>
-            <InfoDescriptionLine>
-              <InfoDescriptionTextLeft>DOB</InfoDescriptionTextLeft>
-              <InfoDescriptionTextRight>00.00.0000</InfoDescriptionTextRight>
-            </InfoDescriptionLine>
-            <InfoDescriptionLine>
-              <InfoDescriptionTextLeft>Student ID</InfoDescriptionTextLeft>
-              <InfoDescriptionTextRight>0000000</InfoDescriptionTextRight>
-            </InfoDescriptionLine>
-            <InfoDescriptionLine>
-              <InfoDescriptionTextLeft>Crd Hr</InfoDescriptionTextLeft>
-              <InfoDescriptionTextRight>15 Crd Hrs</InfoDescriptionTextRight>
-            </InfoDescriptionLine>
-            <InfoDescriptionLine>
-              <InfoDescriptionTextLeft>Badge Count</InfoDescriptionTextLeft>
-              <InfoDescriptionTextRight>00</InfoDescriptionTextRight>
-            </InfoDescriptionLine>
+            {profileData.map((data) => (
+              <InfoDescriptionRow key={data.leftText}>
+                <InfoDescriptionLeftText>
+                  {data.leftText}
+                </InfoDescriptionLeftText>
+                <InfoDescriptionRightText>
+                  {data.rightText}
+                </InfoDescriptionRightText>
+              </InfoDescriptionRow>
+            ))}
           </InfoDescriptionContainer>
           <InfoMenuContainer>
-            <MenuRow>
-              <MenuSingle>
-                <MenuIcon
-                  source={require("../design/ui/profile/menus/icon_settings.png")}
-                />
-                <MenuText>Settings</MenuText>
-              </MenuSingle>
-              <MenuSingle>
-                <MenuIcon
-                  source={require("../design/ui/profile/menus/icon_notifications.png")}
-                />
-                <MenuText>Notice</MenuText>
-              </MenuSingle>
-            </MenuRow>
-            <MenuRow>
-              <MenuSingle>
-                <MenuIcon
-                  source={require("../design/ui/profile/menus/icon_theme.png")}
-                />
-                <MenuText>Theme</MenuText>
-              </MenuSingle>
-              <MenuSingle>
-                <MenuIcon
-                  source={require("../design/ui/profile/menus/icon_guide.png")}
-                />
-                <MenuText>Guide</MenuText>
-              </MenuSingle>
-            </MenuRow>
-            <MenuRow>
-              <MenuSingle>
-                <MenuIcon
-                  source={require("../design/ui/profile/menus/icon_report.png")}
-                />
-                <MenuText>Report</MenuText>
-              </MenuSingle>
-              <MenuSingle>
-                <MenuIcon
-                  source={require("../design/ui/profile/menus/icon_about.png")}
-                />
-                <MenuText>About</MenuText>
-              </MenuSingle>
-            </MenuRow>
+            {menuData.map((menu, index) => (
+              <InfoMenuRow key={menu} hasBorder={index !== menuData.length - 1}>
+                <InfoMenuCol>
+                  <InfoMenuText>{menu}</InfoMenuText>
+                </InfoMenuCol>
+              </InfoMenuRow>
+            ))}
           </InfoMenuContainer>
+          <InfoButton>
+            <InfoButtonText>ACCOUNT SETTINGS</InfoButtonText>
+          </InfoButton>
+          <InfoButton>
+            <InfoButtonText>SIGN OUT</InfoButtonText>
+          </InfoButton>
         </InformationContainer>
       </MainContainer>
-    </>
+    </Container>
   );
 };
 
