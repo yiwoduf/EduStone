@@ -61,7 +61,12 @@ const Tabs = () => {
             return (
               <Image
                 source={shopIcon}
-                style={{ width: 20, height: 20, tintColor: color }}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
               />
             );
           },
@@ -75,7 +80,12 @@ const Tabs = () => {
             return (
               <Image
                 source={todoIcon}
-                style={{ width: 20, height: 20, tintColor: color }}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
               />
             );
           },
@@ -89,7 +99,12 @@ const Tabs = () => {
             return (
               <Image
                 source={assignmentsIcon}
-                style={{ width: 20, height: 20, tintColor: color }}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
               />
             );
           },
@@ -103,7 +118,12 @@ const Tabs = () => {
             return (
               <Image
                 source={profileIcon}
-                style={{ width: 20, height: 20, tintColor: color }}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
               />
             );
           },
@@ -117,7 +137,12 @@ const Tabs = () => {
             return (
               <Image
                 source={awardsIcon}
-                style={{ width: 20, height: 20, tintColor: color }}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
               />
             );
           },
