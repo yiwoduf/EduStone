@@ -55,10 +55,8 @@ const Stone = () => {
               source={require("../design/ui/profile/profile_characters/example.png")}
             />
             <InfoCol>
-              <InfoProfileName>TAYEON KIM</InfoProfileName>
-              <InfoProfileDepartment>
-                SCHOOL OF ENGINEERING
-              </InfoProfileDepartment>
+              <InfoProfileName>TAEYEON KIM</InfoProfileName>
+              <InfoProfileDepartment>SCHOOL OF MUSIC</InfoProfileDepartment>
             </InfoCol>
             <InfoProfileMajor>SR</InfoProfileMajor>
           </InfoProfileContainer>

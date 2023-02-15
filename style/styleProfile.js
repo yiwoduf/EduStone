@@ -3,7 +3,7 @@
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-import { basicFont, contentFontSize, specialFont } from "./fonts";
+import { basicFont, contentFontSize, specialFont, boldFont } from "./fonts";
 import LinearGradient from "react-native-linear-gradient";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
@@ -73,16 +73,17 @@ export const InfoDescriptionRow = styled.View`
 export const InfoDescriptionLeftText = styled.Text`
   font-family: ${basicFont};
   color: white;
-  font-size: 16px;
+  font-size: 13px;
 `;
 export const InfoDescriptionRightText = styled.Text`
-  font-family: ${specialFont};
+  font-family: ${boldFont};
   color: white;
+  font-size: 13px;
   letter-spacing: 0.5px;
 `;
 
 export const InfoCol = styled.View`
-  margin-left: -40px;
+  margin-left: -70px;
 `;
 
 export const InfoProfileImage = styled.Image`
@@ -91,19 +92,21 @@ export const InfoProfileImage = styled.Image`
 `;
 
 export const InfoProfileName = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${boldFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.063}px;
+  font-size: ${SCREEN_WIDTH * 0.05}px;
 `;
 
 export const InfoProfileDepartment = styled(InfoProfileName)`
-  font-size: 10px;
+  font-family: ${basicFont};
+  color: white;
+  font-size: ${SCREEN_WIDTH * 0.03}px;
 `;
 
 export const InfoProfileMajor = styled.Text`
   font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.08}px;
+  font-size: ${SCREEN_WIDTH * 0.09}px;
 `;
 
 export const InfoDescriptionContainer = styled(InfoProfileContainer)`
