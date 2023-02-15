@@ -3,7 +3,6 @@ import { View, useColorScheme, Image } from "react-native"; // For handling Line
 import { LinearGradient } from "expo-linear-gradient";
 import styleApp from "../style/styleApp";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
 import Calendar from "../pages/Calendar";
 import Todos from "../pages/Todos";
 import Stone from "../pages/Stone";
