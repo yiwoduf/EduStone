@@ -12,7 +12,7 @@
     "@expo/webpack-config": "^0.16.19",
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
-    "@react-navigation/stack": "^6.3.4",
+    "@react-navigation/stack": "^6.3.14",
     "accordion-collapse-react-native": "^1.1.1",
     "expo": "^46.0.10",
     "expo-app-loading": "~2.1.0",

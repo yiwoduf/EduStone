@@ -8,6 +8,7 @@ import {
   Keyboard,
 } from "react-native";
 import styled from "styled-components";
+import { useNavigation } from "@react-navigation/native";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
@@ -74,7 +75,7 @@ const BtnContainer = styled.View`
   margin-top: ${SCREEN_HEIGHT * 0.015}px;
 `;
 
-const DefaultBtn = styled.View`
+const DefaultBtn = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   width: 70%;
@@ -94,6 +95,9 @@ const Login = () => {
   const dismissKeyboard = () => {
     Keyboard.dismiss();
   };
+
+  const navigation = useNavigation();
+
   return (
     <TouchableWithoutFeedback
       style={{ flex: 1 }}
@@ -121,12 +125,15 @@ const Login = () => {
             </InputInfoContainer>
 
             <InputInfoContainer>
-              <InputInfoText>Password</InputInfoText>
+              <InputInfoText>Access Token</InputInfoText>
               <InputInfo secureTextEntry></InputInfo>
             </InputInfoContainer>
 
             <BtnContainer>
-              <DefaultBtn btnColor="#9d4edd">
+              <DefaultBtn
+                onPress={() => navigation.navigate("Home", { screen: "Stone" })}
+                btnColor="#9d4edd"
+              >
                 <LoginText>sign in</LoginText>
               </DefaultBtn>
               <DefaultBtn btnColor="#F8B13B">

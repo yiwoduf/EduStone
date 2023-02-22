@@ -140,7 +140,18 @@ export const InfoMenuText = styled.Text`
   color: white;
 `;
 
-export const InfoButton = styled(InfoProfileContainer)`
+export const InfoButton = styled.TouchableOpacity`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: ${SCREEN_WIDTH * 0.89}px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-left: ${SCREEN_WIDTH * 0.035}px;
+  padding-right: ${SCREEN_WIDTH * 0.035}px;
+  margin-bottom: ${SCREEN_HEIGHT * 0.025}px;
   justify-content: center;
   height: ${SCREEN_HEIGHT * 0.06}px;
 `;
