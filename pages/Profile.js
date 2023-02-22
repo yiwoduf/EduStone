@@ -22,6 +22,7 @@ import {
   InfoButton,
   InfoButtonText,
 } from "../style/styleProfile";
+import { useNavigation } from "@react-navigation/native";
 
 const profileData = [
   { leftText: "STUDENT OF", rightText: "UNIVERSITY OF KANSAS" },
@@ -43,6 +44,8 @@ const menuData = [
 ];
 
 const Stone = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <MainContainer>
@@ -55,10 +58,8 @@ const Stone = () => {
               source={require("../design/ui/profile/profile_characters/example.png")}
             />
             <InfoCol>
-              <InfoProfileName>TAYEON KIM</InfoProfileName>
-              <InfoProfileDepartment>
-                SCHOOL OF ENGINEERING
-              </InfoProfileDepartment>
+              <InfoProfileName>TAEYEON KIM</InfoProfileName>
+              <InfoProfileDepartment>SCHOOL OF MUSIC</InfoProfileDepartment>
             </InfoCol>
             <InfoProfileMajor>SR</InfoProfileMajor>
           </InfoProfileContainer>
@@ -86,7 +87,7 @@ const Stone = () => {
           <InfoButton>
             <InfoButtonText>ACCOUNT SETTINGS</InfoButtonText>
           </InfoButton>
-          <InfoButton>
+          <InfoButton onPress={() => navigation.navigate("Login")}>
             <InfoButtonText>SIGN OUT</InfoButtonText>
           </InfoButton>
         </InformationContainer>

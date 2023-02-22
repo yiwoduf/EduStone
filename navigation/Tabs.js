@@ -1,14 +1,18 @@
 import React from "react";
-import { View, useColorScheme } from "react-native"; // For handling LinearGradient @lee
+import { View, useColorScheme, Image } from "react-native"; // For handling LinearGradient @lee
 import { LinearGradient } from "expo-linear-gradient";
 import styleApp from "../style/styleApp";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
 import Calendar from "../pages/Calendar";
 import Todos from "../pages/Todos";
 import Stone from "../pages/Stone";
 import Profile from "../pages/Profile";
 import Award from "../pages/Award";
+import shopIcon from "../design/navBarIcons/shop.png";
+import todoIcon from "../design/navBarIcons/todo.png";
+import assignmentsIcon from "../design/navBarIcons/assignments.png";
+import profileIcon from "../design/navBarIcons/profile.png";
+import awardsIcon from "../design/navBarIcons/awards.png";
 
 const Tab = createBottomTabNavigator();
 
@@ -49,17 +53,39 @@ const Tabs = () => {
         },
       }}
     >
-      <Tab.Screen name="Calendar" component={Calendar} />
+      <Tab.Screen
+        name="Calendar"
+        component={Calendar}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return (
+              <Image
+                source={shopIcon}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
+              />
+            );
+          },
+        }}
+      />
       <Tab.Screen
         name="Todos"
         component={Todos}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
             return (
-              <Ionicons
-                name="ios-checkmark-circle-outline"
-                color={color}
-                size={size}
+              <Image
+                source={todoIcon}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
               />
             );
           },
@@ -71,13 +97,57 @@ const Tabs = () => {
         options={{
           tabBarIcon: ({ focused, color, size }) => {
             return (
-              <Ionicons name="aperture-outline" color={color} size={size} />
+              <Image
+                source={assignmentsIcon}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
+              />
             );
           },
         }}
       />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Award" component={Award} />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return (
+              <Image
+                source={profileIcon}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
+              />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Award"
+        component={Award}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => {
+            return (
+              <Image
+                source={awardsIcon}
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: color,
+                  resizeMode: "contain",
+                }}
+              />
+            );
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };

@@ -7,7 +7,8 @@ import { Asset, useAssets } from "expo-asset";
 import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
 import * as SplashScreen from "expo-splash-screen";
-import LoggedOutNav from "./navigation/LoggedOutNav";
+import Login from "./pages/Login";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
@@ -103,6 +104,8 @@ export const userData = {
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
+const Stack = createStackNavigator();
+
 export default function App() {
   const [ready, setReady] = useState(false);
   const [fontsLoaded] = useFonts({
@@ -173,8 +176,18 @@ export default function App() {
 
   return (
     <NavigationContainer {...this}>
-      {/* <LoggedOutNav /> */}
-      <Tabs />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Tabs}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

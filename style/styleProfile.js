@@ -3,7 +3,7 @@
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-import { basicFont, contentFontSize, specialFont } from "./fonts";
+import { basicFont, contentFontSize, specialFont, boldFont } from "./fonts";
 import LinearGradient from "react-native-linear-gradient";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
@@ -73,16 +73,17 @@ export const InfoDescriptionRow = styled.View`
 export const InfoDescriptionLeftText = styled.Text`
   font-family: ${basicFont};
   color: white;
-  font-size: 16px;
+  font-size: 13px;
 `;
 export const InfoDescriptionRightText = styled.Text`
-  font-family: ${specialFont};
+  font-family: ${boldFont};
   color: white;
+  font-size: 13px;
   letter-spacing: 0.5px;
 `;
 
 export const InfoCol = styled.View`
-  margin-left: -40px;
+  margin-left: -70px;
 `;
 
 export const InfoProfileImage = styled.Image`
@@ -91,19 +92,21 @@ export const InfoProfileImage = styled.Image`
 `;
 
 export const InfoProfileName = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${boldFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.063}px;
+  font-size: ${SCREEN_WIDTH * 0.05}px;
 `;
 
 export const InfoProfileDepartment = styled(InfoProfileName)`
-  font-size: 10px;
+  font-family: ${basicFont};
+  color: white;
+  font-size: ${SCREEN_WIDTH * 0.03}px;
 `;
 
 export const InfoProfileMajor = styled.Text`
   font-family: ${specialFont};
   color: white;
-  font-size: ${SCREEN_WIDTH * 0.08}px;
+  font-size: ${SCREEN_WIDTH * 0.09}px;
 `;
 
 export const InfoDescriptionContainer = styled(InfoProfileContainer)`
@@ -137,7 +140,18 @@ export const InfoMenuText = styled.Text`
   color: white;
 `;
 
-export const InfoButton = styled(InfoProfileContainer)`
+export const InfoButton = styled.TouchableOpacity`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: ${SCREEN_WIDTH * 0.89}px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-left: ${SCREEN_WIDTH * 0.035}px;
+  padding-right: ${SCREEN_WIDTH * 0.035}px;
+  margin-bottom: ${SCREEN_HEIGHT * 0.025}px;
   justify-content: center;
   height: ${SCREEN_HEIGHT * 0.06}px;
 `;
