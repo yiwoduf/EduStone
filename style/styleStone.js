@@ -26,7 +26,9 @@ export const Container = styled(LinearGradient).attrs({
   justify-content: space-between;
 `;
 
-export const PointsContainer = styled.View`
+export const PointsContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7, // Touchable Opacity Setting
+})`
   justify-content: center;
   width: ${SCREEN_WIDTH * 0.8}px;
   height: ${SCREEN_HEIGHT * 0.06}px;
@@ -61,13 +63,15 @@ export const Header = styled.View`
 `;
 
 export const HeaderTitle = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${boldFont};
   color: white;
   padding-left: ${SCREEN_WIDTH * 0.03}px;
   font-size: ${SCREEN_WIDTH * 0.07}px;
 `;
 
-export const StoneExpContainer = styled.View`
+export const StoneExpContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.8, // Touchable Opacity Setting
+})`
   align-items: center;
   justify-content: center;
   width: ${SCREEN_WIDTH * 0.8}px;
@@ -97,7 +101,9 @@ export const StoneExpTextMax = styled.Text`
   text-shadow-radius: 8px;
 `;
 
-export const MoreInfoContainer = styled.View`
+export const MoreInfoContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7, // Touchable Opacity Setting
+})`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

@@ -48,7 +48,9 @@ export const InformationContainer = styled.View`
   align-items: center;
 `;
 
-export const InfoProfileContainer = styled.View`
+export const InfoProfileContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7, // Touchable Opacity Setting
+})`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -128,7 +130,7 @@ export const InfoMenuContainer = styled(InfoProfileContainer)`
 
 export const InfoMenuRow = styled.View`
   width: 100%;
-  border-bottom-width: ${({ hasBorder }) => (hasBorder ? 1 : 0)};
+  border-bottom-width: ${({ hasBorder }) => (hasBorder ? 1 : 0)}px;
   border-bottom-color: #786074;
 `;
 
