@@ -48,7 +48,9 @@ export const InformationContainer = styled.View`
   align-items: center;
 `;
 
-export const InfoProfileContainer = styled.View`
+export const InfoProfileContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7, // Touchable Opacity Setting
+})`
   position: relative;
   display: flex;
   flex-direction: row;
