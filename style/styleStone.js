@@ -61,7 +61,7 @@ export const Header = styled.View`
 `;
 
 export const HeaderTitle = styled.Text`
-  font-family: ${basicFont};
+  font-family: ${boldFont};
   color: white;
   padding-left: ${SCREEN_WIDTH * 0.03}px;
   font-size: ${SCREEN_WIDTH * 0.07}px;

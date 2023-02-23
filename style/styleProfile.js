@@ -128,7 +128,7 @@ export const InfoMenuContainer = styled(InfoProfileContainer)`
 
 export const InfoMenuRow = styled.View`
   width: 100%;
-  border-bottom-width: ${({ hasBorder }) => (hasBorder ? 1 : 0)};
+  border-bottom-width: ${({ hasBorder }) => (hasBorder ? 1 : 0)}px;
   border-bottom-color: #786074;
 `;
 

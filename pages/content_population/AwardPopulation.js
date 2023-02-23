@@ -21,28 +21,26 @@ import {
 import { userData } from "../../App.js";
 
 export function Badges() {
-    return(
-        <BadgeContainer>
-            {userData.content.userBadges.map((badge) => (
-                <BadgeImage source={badge.source}/>
-            ))}
-        </BadgeContainer>
-    );
+  return (
+    <BadgeContainer>
+      {userData.content.userBadges.map((badge) => (
+        <BadgeImage source={badge.source} />
+      ))}
+    </BadgeContainer>
+  );
 }
 
 export function Awards() {
-    return(
-        <ScrollView>
-            {userData.content.userAwards.map((award) => (
-                <AwardComponentContainer>
-                    <AwardImage
-                        source={award.source}
-                    />
-                    <AwardTitleContainer>
-                        <AwardTitle>{award.component}</AwardTitle>
-                    </AwardTitleContainer>
-              </AwardComponentContainer>
-            ))}
-        </ScrollView>
-    );
+  return (
+    <ScrollView>
+      {userData.content.userAwards.map((award) => (
+        <AwardComponentContainer key={award.key}>
+          <AwardImage source={award.source} />
+          <AwardTitleContainer>
+            <AwardTitle>{award.component}</AwardTitle>
+          </AwardTitleContainer>
+        </AwardComponentContainer>
+      ))}
+    </ScrollView>
+  );
 }
