@@ -4,12 +4,7 @@ import {
   MainContainer,
   Header,
   HeaderTitle,
-  StoneExpContainer,
-  StoneExpTextCurrent,
-  StoneExpTextMax,
   Container,
-  PointsContainer,
-  PointsText,
   MoreInfoContainer,
   InfoContainer,
   DescriptText,
@@ -19,6 +14,10 @@ import {
   NoticeContainer,
   NoticeImage,
   NoticeText,
+  SectionTitle,
+  MarketContainer,
+  Item,
+  Center,
 } from "../style/styleStore";
 
 const Store = () => {
@@ -29,31 +28,51 @@ const Store = () => {
           <Header>
             <HeaderTitle>STORE</HeaderTitle>
           </Header>
-          <ScrollView>
-            <NoticeContainer>
-              <NoticeText>KU RALLY HOUSE EVENT</NoticeText>
-              <NoticeImage
-                source={require("../design/ui/store/notice_Image.png")}
-              />
-            </NoticeContainer>
-            <StoneExpContainer>
-              <StoneExpTextCurrent>1029</StoneExpTextCurrent>
-              <StoneExpTextMax>/2000</StoneExpTextMax>
-            </StoneExpContainer>
-            <MoreInfoContainer>
-              <InfoContainer>
-                <InfoText>ALMOST THERE!</InfoText>
-                <DescriptText>YOUR ASSIGNMENTS DUE THIS WEEK</DescriptText>
-              </InfoContainer>
-              <AssignmentNumText>2</AssignmentNumText>
-            </MoreInfoContainer>
-            <MoreInfoContainer>
-              <InfoContainer>
-                <InfoText>JUST "A" STUDENT</InfoText>
-                <DescriptText>KEEP UP THE GOOD WORK!</DescriptText>
-              </InfoContainer>
-              <AssignmentProgressText>96%</AssignmentProgressText>
-            </MoreInfoContainer>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <Center>
+              <NoticeContainer>
+                <NoticeText>KU RALLY HOUSE EVENT</NoticeText>
+                <NoticeImage
+                  source={require("../design/ui/store/notice_Image.png")}
+                />
+              </NoticeContainer>
+            </Center>
+            <SectionTitle>BEAKEM BUCKS</SectionTitle>
+            <MarketContainer>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+              </ScrollView>
+            </MarketContainer>
+            <SectionTitle>GAME TICKETS</SectionTitle>
+            <MarketContainer>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+              </ScrollView>
+            </MarketContainer>
+            <SectionTitle>PARKING PERMIT</SectionTitle>
+            <MarketContainer>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+              </ScrollView>
+            </MarketContainer>
           </ScrollView>
         </MainContainer>
       </Container>
