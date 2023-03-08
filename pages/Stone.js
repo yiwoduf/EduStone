@@ -12,10 +12,10 @@ import {
   PointsContainer,
   PointsText,
   MoreInfoContainer,
-  NoticeContainer,
+  InfoContainer,
   DescriptText,
   AssignmentNumText,
-  NoticeText,
+  InfoText,
   AssignmentProgressText,
 } from "../style/styleStone";
 
@@ -35,17 +35,17 @@ const Stone = () => {
             <StoneExpTextMax>/2000</StoneExpTextMax>
           </StoneExpContainer>
           <MoreInfoContainer>
-            <NoticeContainer>
-              <NoticeText>ALMOST THERE!</NoticeText>
+            <InfoContainer>
+              <InfoText>ALMOST THERE!</InfoText>
               <DescriptText>YOUR ASSIGNMENTS DUE THIS WEEK</DescriptText>
-            </NoticeContainer>
+            </InfoContainer>
             <AssignmentNumText>2</AssignmentNumText>
           </MoreInfoContainer>
           <MoreInfoContainer>
-            <NoticeContainer>
-              <NoticeText>JUST "A" STUDENT</NoticeText>
+            <InfoContainer>
+              <InfoText>JUST "A" STUDENT</InfoText>
               <DescriptText>KEEP UP THE GOOD WORK!</DescriptText>
-            </NoticeContainer>
+            </InfoContainer>
             <AssignmentProgressText>96%</AssignmentProgressText>
           </MoreInfoContainer>
         </MainContainer>

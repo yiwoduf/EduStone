@@ -26,25 +26,38 @@ export const Container = styled(LinearGradient).attrs({
   justify-content: space-between;
 `;
 
-export const PointsContainer = styled.TouchableOpacity.attrs({
+export const NoticeContainer = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7, // Touchable Opacity Setting
 })`
   justify-content: center;
-  width: ${SCREEN_WIDTH * 0.8}px;
-  height: ${SCREEN_HEIGHT * 0.06}px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  width: ${SCREEN_WIDTH * 0.9}px;
+  height: ${SCREEN_HEIGHT * 0.1}px;
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: ${(SCREEN_HEIGHT * 0.06) / 3}px;
   margin-bottom: 20px;
+  overflow: hidden;
 `;
 
-export const PointsText = styled.Text`
-  font-family: ${specialFont};
+export const NoticeImage = styled.Image`
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+`;
+
+export const NoticeText = styled.Text`
+  position: absolute;
+  z-index: 1;
+  font-family: ${boldFont};
   color: white;
-  text-align: center;
-  font-size: ${SCREEN_WIDTH * 0.09}px;
-  text-shadow-color: #fff;
-  text-shadow-opacity: 50%;
-  text-shadow-radius: 6px;
+  padding-left: ${SCREEN_WIDTH * 0.03}px;
+  font-size: ${SCREEN_WIDTH * 0.04}px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
 `;
 
 export const BackgroundContainer = styled.Image`
@@ -115,9 +128,9 @@ export const MoreInfoContainer = styled.TouchableOpacity.attrs({
   margin: 15px 0px;
 `;
 
-export const NoticeContainer = styled.View``;
+export const InfoContainer = styled.View``;
 
-export const NoticeText = styled.Text`
+export const InfoText = styled.Text`
   font-family: ${boldFont};
   color: white;
   font-size: ${SCREEN_WIDTH * 0.045}px;

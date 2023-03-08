@@ -1,4 +1,5 @@
 import React from "react";
+import { ScrollView, SafeAreaView } from "react-native";
 import {
   MainContainer,
   Header,
@@ -10,46 +11,54 @@ import {
   PointsContainer,
   PointsText,
   MoreInfoContainer,
-  NoticeContainer,
+  InfoContainer,
   DescriptText,
   AssignmentNumText,
-  NoticeText,
+  InfoText,
   AssignmentProgressText,
+  NoticeContainer,
+  NoticeImage,
+  NoticeText,
 } from "../style/styleStore";
 
-const Calendar = () => {
+const Store = () => {
   return (
     <>
       <Container>
         <MainContainer>
           <Header>
-            <HeaderTitle>PROGRESS</HeaderTitle>
+            <HeaderTitle>STORE</HeaderTitle>
           </Header>
-          <PointsContainer>
-            <PointsText> 8105 PTS</PointsText>
-          </PointsContainer>
-          <StoneExpContainer>
-            <StoneExpTextCurrent>1029</StoneExpTextCurrent>
-            <StoneExpTextMax>/2000</StoneExpTextMax>
-          </StoneExpContainer>
-          <MoreInfoContainer>
+          <ScrollView>
             <NoticeContainer>
-              <NoticeText>ALMOST THERE!</NoticeText>
-              <DescriptText>YOUR ASSIGNMENTS DUE THIS WEEK</DescriptText>
+              <NoticeText>KU RALLY HOUSE EVENT</NoticeText>
+              <NoticeImage
+                source={require("../design/ui/store/notice_Image.png")}
+              />
             </NoticeContainer>
-            <AssignmentNumText>2</AssignmentNumText>
-          </MoreInfoContainer>
-          <MoreInfoContainer>
-            <NoticeContainer>
-              <NoticeText>JUST "A" STUDENT</NoticeText>
-              <DescriptText>KEEP UP THE GOOD WORK!</DescriptText>
-            </NoticeContainer>
-            <AssignmentProgressText>96%</AssignmentProgressText>
-          </MoreInfoContainer>
+            <StoneExpContainer>
+              <StoneExpTextCurrent>1029</StoneExpTextCurrent>
+              <StoneExpTextMax>/2000</StoneExpTextMax>
+            </StoneExpContainer>
+            <MoreInfoContainer>
+              <InfoContainer>
+                <InfoText>ALMOST THERE!</InfoText>
+                <DescriptText>YOUR ASSIGNMENTS DUE THIS WEEK</DescriptText>
+              </InfoContainer>
+              <AssignmentNumText>2</AssignmentNumText>
+            </MoreInfoContainer>
+            <MoreInfoContainer>
+              <InfoContainer>
+                <InfoText>JUST "A" STUDENT</InfoText>
+                <DescriptText>KEEP UP THE GOOD WORK!</DescriptText>
+              </InfoContainer>
+              <AssignmentProgressText>96%</AssignmentProgressText>
+            </MoreInfoContainer>
+          </ScrollView>
         </MainContainer>
       </Container>
     </>
   );
 };
 
-export default Calendar;
+export default Store;

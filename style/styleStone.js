@@ -115,9 +115,9 @@ export const MoreInfoContainer = styled.TouchableOpacity.attrs({
   margin: 15px 0px;
 `;
 
-export const NoticeContainer = styled.View``;
+export const InfoContainer = styled.View``;
 
-export const NoticeText = styled.Text`
+export const InfoText = styled.Text`
   font-family: ${boldFont};
   color: white;
   font-size: ${SCREEN_WIDTH * 0.045}px;
