@@ -15,7 +15,7 @@ import {
   AssignmentNumText,
   NoticeText,
   AssignmentProgressText,
-} from "../style/styleCalendar";
+} from "../style/styleStore";
 
 const Calendar = () => {
   return (
