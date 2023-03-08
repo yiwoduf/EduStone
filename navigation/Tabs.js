@@ -1,6 +1,6 @@
 import React from "react";
 import { View, useColorScheme, Image } from "react-native"; // For handling LinearGradient @lee
-import { LinearGradient } from "expo-linear-gradient";
+import {LinearGradient} from 'expo-linear-gradient';
 import styleApp from "../style/styleApp";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Calendar from "../pages/Calendar";
