@@ -3,7 +3,7 @@ import { View, useColorScheme, Image } from "react-native"; // For handling Line
 import { LinearGradient } from "expo-linear-gradient";
 import styleApp from "../style/styleApp";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Calendar from "../pages/Calendar";
+import Store from "../pages/Store";
 import Todos from "../pages/Todos";
 import Stone from "../pages/Stone";
 import Profile from "../pages/Profile";
@@ -20,7 +20,7 @@ const Tabs = () => {
   const isDark = useColorScheme() === "dark";
   return (
     <Tab.Navigator
-      initialRouteName="Stone"
+      initialRouteName="Store"
       screenOptions={{
         tabBarLabelStyle: isDark ? { color: "white" } : { color: "black" },
         tabBarStyle: {
@@ -54,8 +54,8 @@ const Tabs = () => {
       }}
     >
       <Tab.Screen
-        name="Calendar"
-        component={Calendar}
+        name="Store"
+        component={Store}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
             return (
