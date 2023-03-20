@@ -1,5 +1,6 @@
 import React from "react";
 import {LinearGradient} from "expo-linear-gradient";
+import { useState, useEffect } from 'react';
 import {
   Dimensions,
   Platform,
@@ -97,6 +98,9 @@ const Login = () => {
   };
 
   const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
 
   return (
     <TouchableWithoutFeedback
@@ -121,17 +125,22 @@ const Login = () => {
 
             <InputInfoContainer>
               <InputInfoText>E-Mail Address</InputInfoText>
-              <InputInfo></InputInfo>
+              <InputInfo
+              onChangeText = {(email) => setEmail(email)}
+              />
             </InputInfoContainer>
 
             <InputInfoContainer>
               <InputInfoText>Access Token</InputInfoText>
-              <InputInfo secureTextEntry></InputInfo>
+              <InputInfo 
+              secureTextEntry
+              onChangeText = {(password) => setPassword(password)}
+              />
             </InputInfoContainer>
 
             <BtnContainer>
               <DefaultBtn
-                onPress={() => navigation.navigate("Home", { screen: "Stone" })}
+                onPress={() => navigation.navigate("Home", { screen: "Stone", userEmail: {email}, userPassword: {password} })}
                 btnColor="#9d4edd"
               >
                 <LoginText>sign in</LoginText>
