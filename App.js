@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
 import * as SplashScreen from "expo-splash-screen";
 import Login from "./pages/Login";
+import Loading from "./pages/Loading";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
@@ -181,6 +182,11 @@ export default function App() {
           name="Login"
           component={Login}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Loading"
+          component={Loading}
+          options={{ headerShown: false}}
         />
         <Stack.Screen
           name="Home"

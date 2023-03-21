@@ -16,12 +16,8 @@ import awardsIcon from "../design/navBarIcons/awards.png";
 
 const Tab = createBottomTabNavigator();
 
-const Tabs = ({route}) => {
+const Tabs = () => {
   const isDark = useColorScheme() === "dark";
-  const {userEmail, userPassword} = route.params;
-  const email = userEmail.email;
-  const password = userPassword.password;
-  console.log("User email: %s", email);
 
   return (
     <Tab.Navigator

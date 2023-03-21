@@ -140,7 +140,7 @@ const Login = () => {
 
             <BtnContainer>
               <DefaultBtn
-                onPress={() => navigation.navigate("Home", { screen: "Stone", userEmail: {email}, userPassword: {password} })}
+                onPress={() => navigation.navigate("Loading", { userEmail: {email}, userPassword: {password} })}
                 btnColor="#9d4edd"
               >
                 <LoginText>sign in</LoginText>
