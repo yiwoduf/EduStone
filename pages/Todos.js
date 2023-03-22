@@ -4,19 +4,19 @@ import {
   MainContainer,
   Header,
   HeaderTitle,
-  BackgroundContainer,
   TodoListContainer,
   TodoBox,
   Todo,
   ProcessStatus,
   DueDate,
   TodoTitle,
-  AfterBox,
   ProgressBar,
   GradeBar,
   PopupInfo,
   InfoText,
   InfoTextWrapper,
+  Container,
+  CourseTitle,
 } from "../style/styleTodos";
 import {
   Collapse,
@@ -26,46 +26,51 @@ import {
 
 const Todos = () => {
   return (
-    <>
-      <BackgroundContainer source={require("../design/bg/ToDoList_BG.png")} />
+    <Container>
       <MainContainer>
         <Header>
-          <HeaderTitle>TO-DO LIST</HeaderTitle>
+          <HeaderTitle>ASSIGNMENTS</HeaderTitle>
         </Header>
         <TodoListContainer
           data={[
             {
               key: "In Class Problem #1",
+              course: "EECS 582",
               process: false,
               complete: true,
               graded: false,
             },
             {
               key: "In Class Problem #2",
+              course: "EECS 582",
               process: false,
               complete: true,
               graded: false,
             },
             {
               key: "In Class Problem #3",
+              course: "EECS 582",
               process: true,
               complete: true,
               graded: false,
             },
             {
               key: "In Class Problem #4",
+              course: "EECS 582",
               process: true,
               complete: true,
               graded: true,
             },
             {
               key: "In Class Problem #5",
+              course: "EECS 582",
               process: true,
               complete: false,
               graded: false,
             },
             {
               key: "In Class Problem #6",
+              course: "EECS 582",
               process: true,
               complete: true,
               graded: false,
@@ -78,12 +83,14 @@ const Todos = () => {
                 <CollapseHeader>
                   <TodoBox index={index}>
                     <Todo>
+                      <CourseTitle>{item.course}</CourseTitle>
                       <TodoTitle
                         process={item.process}
                         complete={item.complete}
                       >
                         {item.key}
                       </TodoTitle>
+                      <DueDate>Due 2023.10.10</DueDate>
                     </Todo>
                     <ProcessStatus>
                       {item.process ? (
@@ -107,7 +114,6 @@ const Todos = () => {
                       )}
                     </ProcessStatus>
                   </TodoBox>
-                  <AfterBox index={index} />
                 </CollapseHeader>
                 <CollapseBody>
                   <PopupInfo>
@@ -126,7 +132,7 @@ const Todos = () => {
           )}
         ></TodoListContainer>
       </MainContainer>
-    </>
+    </Container>
   );
 };
 
