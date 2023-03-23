@@ -1,10 +1,10 @@
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, AsyncStorage, Button} from 'react-native';
+import { StyleSheet, Text, View, Button} from 'react-native';
 import { useState, useEffect } from 'react';
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, CommonActions } from "@react-navigation/native";
 
 const storeUserEmail = async (value) => {
 	try {
@@ -15,12 +15,12 @@ const storeUserEmail = async (value) => {
 	}
 }
 
-function requestUser(userID) {
+function requestUser(userEmail) {
   return new Promise(resolve => {
     setTimeout(() => {
       // this fetch needs to be the IP of the server host
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!
-      resolve(fetch(`http://10.104.254.103:8080/api/users?id=${userID}`)
+      resolve(fetch(`http://192.168.1.196:8080/api/users?userEmail=${userEmail}`)
         .then(response => response.json())  
         .catch(error => {
           console.error(error);
@@ -28,6 +28,22 @@ function requestUser(userID) {
       );
     }, 0); 
   });
+}
+
+function testValidUser(id){
+  const navigation = useNavigation();
+  if (id == 0){
+    console.log("Invalid email was entered. Try again.");
+    navigation.dispatch(
+      CommonActions.navigate({
+        name: 'Login',
+        params: {},
+      })
+    );
+  } else {
+    console.log("Valid email was given. User Exists.");
+  }
+  return null;
 }
 
 // function to use the stored userID to retrieve a JSON containing information
@@ -75,7 +91,11 @@ export default function App({route}) {
         <Text>Loading...</Text>
       </SafeAreaView >
     );
+  } else {
+    testValidUser(user.id);
   }
+
+
 
   return (
     <SafeAreaView style={styles.containerLoaded}>

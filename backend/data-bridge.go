@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strconv"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -33,7 +32,7 @@ func fillUserInDatabase(id int, firstName string, lastName string, email string)
 	defer insert.Close()
 }
 
-func getUserFromDatabase(id int) (*User, error) {
+func getUserFromDatabase(email string) (*User, error) {
 	// Replace this with a call to your database to retrieve the user with the given ID
 	db, err := sql.Open("mysql", "root:toorMove23!@tcp(127.0.0.1:3307)/userdb")
 	defer db.Close()
@@ -42,7 +41,7 @@ func getUserFromDatabase(id int) (*User, error) {
 		return nil, err
 	}
 
-	res, err := db.Query("SELECT * FROM users WHERE id = ?", id)
+	res, err := db.Query("SELECT * FROM users WHERE email = ?", email)
 	defer res.Close()
 
 	if err != nil {
@@ -63,18 +62,13 @@ func getUserFromDatabase(id int) (*User, error) {
 
 func getUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Recieved Request!!")
-	fmt.Println("Retrieving userID from request...")
-	userIDStr := r.URL.Query().Get("id")
-	fmt.Println("User ID: ", userIDStr)
-	fmt.Println("Converting userID to int...")
-	userID, err := strconv.Atoi(userIDStr)
-	if err != nil {
-		http.Error(w, "Invalid user ID", http.StatusBadRequest)
-		return
-	}
+	fmt.Println("Retrieving userEmail from request...")
+	userEmailStr := r.URL.Query().Get("userEmail")
 
-	fmt.Println("Retrieving user object using userID...")
-	user, err := getUserFromDatabase(userID)
+	fmt.Println("User email: ", userEmailStr)
+
+	fmt.Println("Retrieving user object using userEmail...")
+	user, err := getUserFromDatabase(userEmailStr)
 	if err != nil {
 		http.Error(w, "Error retrieving user", http.StatusInternalServerError)
 		return
