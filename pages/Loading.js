@@ -20,7 +20,7 @@ function requestUser(userID) {
     setTimeout(() => {
       // this fetch needs to be the IP of the server host
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!
-      resolve(fetch(`http://192.168.1.196:8080/api/users?id=${userID}`)
+      resolve(fetch(`http://10.104.254.103:8080/api/users?id=${userID}`)
         .then(response => response.json())  
         .catch(error => {
           console.error(error);
