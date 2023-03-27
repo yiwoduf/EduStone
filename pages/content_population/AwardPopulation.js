@@ -18,12 +18,15 @@ import {
 } from "../../style/styleAward";
 
 //data object, we can even store this in the cloud and update it on refresh or smth
-import { userData } from "../../App.js";
+import { userData, isLoaded } from "../Loading.js";
 
 export function Badges() {
+  while(!isLoaded) {
+    return(NULL);
+  }
   return (
     <BadgeContainer>
-      {userData.content.userBadges.map((badge) => (
+      {userData.badges.map((badge) => (
         <BadgeImage source={badge.source} />
       ))}
     </BadgeContainer>
@@ -31,10 +34,14 @@ export function Badges() {
 }
 
 export function Awards() {
+  while(!isLoaded) {
+    return(NULL);
+  }
   return (
     <ScrollView>
-      {userData.content.userAwards.map((award) => (
+      {userData.awards.map((award) => (
         <AwardComponentContainer key={award.key}>
+          {/* <AwardImage source={require(award.source)} /> */}
           <AwardImage source={award.source} />
           <AwardTitleContainer>
             <AwardTitle>{award.component}</AwardTitle>

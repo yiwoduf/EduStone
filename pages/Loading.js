@@ -6,6 +6,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, CommonActions } from "@react-navigation/native";
 
+export let userData;
+export let isLoaded;
+
 const storeUserEmail = async (value) => {
 	try {
 		await AsyncStorage.setItem('userEmail', value);
@@ -20,7 +23,7 @@ function requestUser(userEmail) {
     setTimeout(() => {
       // this fetch needs to be the IP of the server host
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!
-      resolve(fetch(`http://192.168.1.196:8080/api/users?userEmail=${userEmail}`)
+      resolve(fetch(`http://10.104.207.204:8080/api/users?userEmail=${userEmail}`)
         .then(response => response.json())  
         .catch(error => {
           console.error(error);
@@ -74,9 +77,11 @@ export default function App({route}) {
     console.log("===========================");
     getUser().then(response => {
       setUser(response);
+      userData = user;
       console.log("===========================");
       console.log("Ending getUser Process...");
       setLoading(false);
+      isLoaded = true;
     });
   };
 
@@ -92,7 +97,7 @@ export default function App({route}) {
       </SafeAreaView >
     );
   } else {
-    testValidUser(user.id);
+    // testValidUser(user.id);
   }
 
 
@@ -103,7 +108,8 @@ export default function App({route}) {
       <Text>ID: {user.id} </Text>
       <Text>First Name: {user.first_name} </Text>
       <Text>Last Name: {user.last_name} </Text>
-      <Text>Email: {user.email} </Text> 
+      <Text>Email: {user.email} </Text>
+      <Text>Class 0: {user.classes[0].name}</Text>
       <Button title="Continue" onPress={() => navigation.navigate('Home', { screen: "stone"})}/>
     </SafeAreaView>
   );
