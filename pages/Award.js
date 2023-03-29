@@ -13,6 +13,7 @@ import {
   BadgeHistoryHeaderTitle,
   BadgeHistoryDescription,
   BadgeHistoryTextContainer,
+  BadgeHistoryIcon,
 } from "../style/styleAward";
 import { FlatList } from "react-native";
 
@@ -55,6 +56,9 @@ const Award = () => {
 
   const renderBadgeHistoryItem = ({ item }) => (
     <BadgeHistoryBox>
+      <BadgeHistoryIcon
+        source={require("../design/ui/award/achievements/award_icon.png")}
+      />
       <BadgeHistoryTextContainer>
         <BadgeHistoryTitle>{item.title}</BadgeHistoryTitle>
         <BadgeHistoryDescription>{item.description}</BadgeHistoryDescription>

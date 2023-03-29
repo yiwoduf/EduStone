@@ -81,7 +81,10 @@ export const BadgeHistoryContainer = styled.View`
 
 export const BadgeHistoryBox = styled(DefaultContainer)`
   display: flex;
+  justify-content: space-between;
+  padding: 5px 40px 0px 10px;
   height: ${SCREEN_HEIGHT * 0.08}px;
+  margin-bottom: ${SCREEN_HEIGHT * 0.02}px;
 `;
 
 export const BadgeHistoryHeader = styled(Header)`
@@ -92,6 +95,11 @@ export const BadgeHistoryHeader = styled(Header)`
 
 export const BadgeHistoryHeaderTitle = styled(HeaderTitle)`
   font-size: 22px;
+`;
+
+export const BadgeHistoryIcon = styled.Image`
+  width: 75px;
+  height: 80px;
 `;
 
 export const BadgeHistoryTextContainer = styled.View``;
