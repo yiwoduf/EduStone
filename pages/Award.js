@@ -27,14 +27,13 @@ const Award = () => {
           <HeaderTitle>AWARDS & BADGES</HeaderTitle>
         </Header>
 
-        <Badges/>
+        <Badges />
 
         <SectionTitle>
           <SectionTitleText>AWARD HISTORY</SectionTitleText>
         </SectionTitle>
 
-        <Awards/>
-        
+        <Awards />
       </MainContainer>
     </>
   );

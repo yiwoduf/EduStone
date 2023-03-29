@@ -130,3 +130,8 @@ export const InfoText = styled.Text`
   font-size: ${SCREEN_WIDTH * contentFontSize}px;
   color: white;
 `;
+
+export const SubmissionState = styled.Image`
+  max-height: ${SCREEN_HEIGHT * 0.042}px;
+  max-width: ${SCREEN_WIDTH * 0.0901}px;
+`;
