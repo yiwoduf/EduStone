@@ -50,7 +50,7 @@ export const TodoListContainer = styled.FlatList`
   width: 100%;
 `;
 
-export const TodoBox = styled.View`
+export const TodoBox = styled.TouchableOpacity`
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -118,6 +118,7 @@ export const PopupInfo = styled.View`
   height: ${SCREEN_HEIGHT * 0.15}px;
   margin-top: 5px;
   background-color: rgba(0, 0, 0, 0.3);
+  border-radius: ${(SCREEN_HEIGHT * 0.08) / 3}px;
   padding: 20px 0px 20px 15px;
 `;
 
@@ -129,4 +130,9 @@ export const InfoText = styled.Text`
   font-family: ${basicFont};
   font-size: ${SCREEN_WIDTH * contentFontSize}px;
   color: white;
+`;
+
+export const SubmissionState = styled.Image`
+  max-height: ${SCREEN_HEIGHT * 0.042}px;
+  max-width: ${SCREEN_WIDTH * 0.0901}px;
 `;

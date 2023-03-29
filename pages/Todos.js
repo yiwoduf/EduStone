@@ -17,6 +17,7 @@ import {
   InfoTextWrapper,
   Container,
   CourseTitle,
+  SubmissionState,
 } from "../style/styleTodos";
 import {
   Collapse,
@@ -100,14 +101,14 @@ const Todos = () => {
                               <GradeBar grade="70"></GradeBar>
                             </ProgressBar>
                           ) : (
-                            <Ionicons
-                              name="md-checkmark-sharp"
-                              color="#3DFE0B"
-                              size={30}
+                            <SubmissionState
+                              source={require("../design/ui/todo/status_submitted.png")}
                             />
                           )
                         ) : (
-                          <Ionicons name="close" color="#FF1F2A" size={30} />
+                          <SubmissionState
+                            source={require("../design/ui/todo/status_not_submitted.png")}
+                          />
                         )
                       ) : (
                         <DueDate>09.01</DueDate>
