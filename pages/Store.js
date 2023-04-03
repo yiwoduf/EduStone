@@ -1,16 +1,10 @@
 import React from "react";
-import { ScrollView, SafeAreaView } from "react-native";
+import { ScrollView } from "react-native";
 import {
   MainContainer,
   Header,
   HeaderTitle,
   Container,
-  MoreInfoContainer,
-  InfoContainer,
-  DescriptText,
-  AssignmentNumText,
-  InfoText,
-  AssignmentProgressText,
   NoticeContainer,
   NoticeImage,
   NoticeText,
@@ -18,6 +12,7 @@ import {
   MarketContainer,
   Item,
   Center,
+  MarketIamgeContainer,
 } from "../style/styleStore";
 
 const Store = () => {
@@ -43,10 +38,21 @@ const Store = () => {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Bucks_1.png")}
+                  />
+                </Item>
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Bucks_2.png")}
+                  />
+                </Item>
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Bucks_3.png")}
+                  />
+                </Item>
               </ScrollView>
             </MarketContainer>
             <SectionTitle>GAME TICKETS</SectionTitle>
@@ -55,10 +61,21 @@ const Store = () => {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Game_1.png")}
+                  />
+                </Item>
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Game_2.png")}
+                  />
+                </Item>
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Game_3.png")}
+                  />
+                </Item>
               </ScrollView>
             </MarketContainer>
             <SectionTitle>PARKING PERMIT</SectionTitle>
@@ -67,10 +84,21 @@ const Store = () => {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Parking_1.png")}
+                  />
+                </Item>
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Parking_2.png")}
+                  />
+                </Item>
+                <Item>
+                  <MarketIamgeContainer
+                    source={require("../design/ui/store/Parking_3.png")}
+                  />
+                </Item>
               </ScrollView>
             </MarketContainer>
           </ScrollView>

@@ -148,30 +148,40 @@ export const AssignmentProgressText = styled.Text`
   text-shadow-radius: 5px;
 `;
 
-// export const StoneImageContainer = styled.View`
-//   shadow-color: #ff5bda;
-//   shadow-opacity: 0.4;
-//   shadow-radius: 20px;
-// `;
+export const ProgressRing = styled.View`
+  width: ${SCREEN_WIDTH * 0.7}px;
+  height: ${SCREEN_WIDTH * 0.7}px;
+  border-radius: 500px;
+  border-width: 13px;
+  border-color: #ffdeb3;
+  box-shadow: 0px 0px 10px #e89d65;
+  background-color: transparent;
+`;
 
-// export const StoneImage = styled.Image`
-//   margin-top: ${SCREEN_HEIGHT * 0.1}px;
-//   max-height: ${SCREEN_HEIGHT * 0.27}px;
-//   max-width: ${SCREEN_WIDTH * 0.35}px;
-// `;
+export const Progress = styled.View`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 500px;
+  border-width: 10px;
+  border-color: #ffdeb3;
+  box-shadow: 0px 0px 20px #e89d65;
+`;
 
-// export const ExpProgressBarMax = styled.View`
-//   width: ${width * 0.13}px;
-//   height: ${height * 0.01}px;
-//   background-color: #373737;
-// `;
+export const ProgressBar = ({ progress }) => {
+  console.log("progress:", progress);
+  const rotateValue = `${progress * 360}deg`;
 
-// export const ExpProgressBarMax = styled.View`
-//   width: ${width * 0.13}px;
-//   height: ${height * 0.01}px;
-//   background-color: #373737;
-// `;
+  return (
+    <ProgressRing>
+      <Progress style={{ transform: [{ rotate: rotateValue }] }} />
+    </ProgressRing>
+  );
+};
 
-// export const ExpProgressBar = styled(ExpProgressBarMax)`
-
-// `;
+export const RingContainer = styled.View`
+  position: absolute;
+  z-index: -10000;
+`;

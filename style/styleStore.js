@@ -96,7 +96,7 @@ export const SectionTitle = styled.Text`
   font-family: ${boldFont};
   color: white;
   padding-left: ${SCREEN_WIDTH * 0.06}px;
-  font-size: ${SCREEN_WIDTH * 0.045}px;
+  font-size: ${SCREEN_WIDTH * 0.04}px;
 `;
 
 export const MarketContainer = styled.View`
@@ -105,22 +105,24 @@ export const MarketContainer = styled.View`
   height: ${SCREEN_WIDTH * 0.48}px;
 `;
 
+export const MarketIamgeContainer = styled.Image`
+  max-height: 100%;
+  max-width: ${SCREEN_WIDTH * 0.404}px;
+`;
+
 export const Item = styled.TouchableOpacity.attrs({
   activeOpacity: 0.8, // Touchable Opacity Setting
 })`
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: ${SCREEN_WIDTH * 0.37}px;
   height: ${SCREEN_WIDTH * 0.43}px;
-  background-color: rgba(255, 255, 255, 1);
   border-radius: ${(SCREEN_HEIGHT * 0.06) / 3}px;
-  padding: 20px;
   shadow-color: #000;
   shadow-opacity: 0.2;
   /* shadow-offset: {
     height: -10px;
   } */
-  padding: 0px 25px;
-  margin: 10px 7px;
+  margin: 10px 9px;
 `;
