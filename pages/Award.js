@@ -91,6 +91,7 @@ const Award = () => {
               data={badgeHistoryData}
               renderItem={renderBadgeHistoryItem}
               keyExtractor={(item) => item.id}
+              showsVerticalScrollIndicator={false}
             />
           </BadgeHistoryContainer>
         </MainContainer>

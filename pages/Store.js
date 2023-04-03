@@ -13,6 +13,8 @@ import {
   Item,
   Center,
   MarketIamgeContainer,
+  SubContainer,
+  TransparentContainer,
 } from "../style/styleStore";
 
 const Store = () => {
@@ -23,6 +25,7 @@ const Store = () => {
           <Header>
             <HeaderTitle>STORE</HeaderTitle>
           </Header>
+
           <ScrollView showsVerticalScrollIndicator={false}>
             <Center>
               <NoticeContainer>
@@ -32,75 +35,44 @@ const Store = () => {
                 />
               </NoticeContainer>
             </Center>
-            <SectionTitle>BEAKEM BUCKS</SectionTitle>
-            <MarketContainer>
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Bucks_1.png")}
-                  />
-                </Item>
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Bucks_2.png")}
-                  />
-                </Item>
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Bucks_3.png")}
-                  />
-                </Item>
-              </ScrollView>
-            </MarketContainer>
-            <SectionTitle>GAME TICKETS</SectionTitle>
-            <MarketContainer>
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Game_1.png")}
-                  />
-                </Item>
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Game_2.png")}
-                  />
-                </Item>
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Game_3.png")}
-                  />
-                </Item>
-              </ScrollView>
-            </MarketContainer>
-            <SectionTitle>PARKING PERMIT</SectionTitle>
-            <MarketContainer>
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Parking_1.png")}
-                  />
-                </Item>
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Parking_2.png")}
-                  />
-                </Item>
-                <Item>
-                  <MarketIamgeContainer
-                    source={require("../design/ui/store/Parking_3.png")}
-                  />
-                </Item>
-              </ScrollView>
-            </MarketContainer>
+            <SubContainer>
+              <SectionTitle>BEAKEM BUCKS</SectionTitle>
+              <MarketContainer>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Item />
+                  <Item />
+                  <Item />
+                  <Item />
+                </ScrollView>
+              </MarketContainer>
+              <SectionTitle>GAME TICKETS</SectionTitle>
+              <MarketContainer>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Item />
+                  <Item />
+                  <Item />
+                  <Item />
+                </ScrollView>
+              </MarketContainer>
+              <SectionTitle>PARKING PERMIT</SectionTitle>
+              <MarketContainer>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Item />
+                  <Item />
+                  <Item />
+                  <Item />
+                </ScrollView>
+              </MarketContainer>
+            </SubContainer>
           </ScrollView>
         </MainContainer>
       </Container>

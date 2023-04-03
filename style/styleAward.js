@@ -65,7 +65,7 @@ export const BadgeBox = styled.View`
   border-radius: 10px;
   margin-right: ${SCREEN_WIDTH * 0.01}px;
   margin-bottom: ${SCREEN_HEIGHT * 0.01}px;
-  margin-top: ${SCREEN_HEIGHT * 0.01}px; ;
+  margin-top: ${SCREEN_HEIGHT * 0.01}px;
 `;
 
 export const BadgeImage = styled.Image`
@@ -77,6 +77,8 @@ export const BadgeHistoryContainer = styled.View`
   display: flex;
   align-items: center;
   width: 100%;
+  height: ${SCREEN_HEIGHT * 0.6}px;
+  padding-bottom: 70px;
 `;
 
 export const BadgeHistoryBox = styled(DefaultContainer)`
