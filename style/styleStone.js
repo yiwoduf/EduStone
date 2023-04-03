@@ -5,6 +5,7 @@ import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 import { basicFont, contentFontSize, specialFont, boldFont } from "./fonts";
 import LinearGradient from "react-native-linear-gradient";
+import { Svg, Circle } from "react-native-svg";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
 
@@ -148,40 +149,22 @@ export const AssignmentProgressText = styled.Text`
   text-shadow-radius: 5px;
 `;
 
-export const ProgressRing = styled.View`
-  width: ${SCREEN_WIDTH * 0.7}px;
-  height: ${SCREEN_WIDTH * 0.7}px;
-  border-radius: 500px;
-  border-width: 13px;
-  border-color: #ffdeb3;
-  box-shadow: 0px 0px 10px #e89d65;
-  background-color: transparent;
-`;
-
-export const Progress = styled.View`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 500px;
-  border-width: 10px;
-  border-color: #ffdeb3;
-  box-shadow: 0px 0px 20px #e89d65;
-`;
-
-export const ProgressBar = ({ progress }) => {
-  console.log("progress:", progress);
-  const rotateValue = `${progress * 360}deg`;
+export const ProgressRingSvg = ({ radius, strokeWidth, progress }) => {
+  const circumference = radius * 2 * Math.PI;
+  const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
-    <ProgressRing>
-      <Progress style={{ transform: [{ rotate: rotateValue }] }} />
-    </ProgressRing>
+    <Svg width={radius * 2} height={radius * 2}>
+      <Circle
+        stroke="#ffdeb3"
+        fill="transparent"
+        strokeWidth={strokeWidth}
+        strokeDasharray={`${circumference} ${circumference}`}
+        strokeDashoffset={strokeDashoffset}
+        r={radius - strokeWidth / 2}
+        cx={radius}
+        cy={radius}
+      />
+    </Svg>
   );
 };
-
-export const RingContainer = styled.View`
-  position: absolute;
-  z-index: -10000;
-`;
