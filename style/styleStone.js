@@ -5,7 +5,7 @@ import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 import { basicFont, contentFontSize, specialFont, boldFont } from "./fonts";
 import LinearGradient from "react-native-linear-gradient";
-import { Svg, Circle } from "react-native-svg";
+import Svg, { Circle, G } from "react-native-svg";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
 
@@ -17,6 +17,61 @@ export const MainContainer = styled.SafeAreaView`
   height: ${SCREEN_HEIGHT}px;
   width: ${SCREEN_WIDTH}px;
 `;
+
+const StyledView = styled.View`
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px #e89d65;
+`;
+
+export const ProgressCircle = ({
+  percentage,
+  radius = 145,
+  strokeWidth = 28,
+}) => {
+  const circumference = 2 * Math.PI * radius;
+  const halfCircle = radius + strokeWidth;
+
+  const circleProgress = (percentage * circumference) / 100;
+  const strokeDashoffset = circleProgress - circumference;
+
+  return (
+    <StyledView>
+      <Svg
+        width={radius * 2}
+        height={radius * 2}
+        viewBox={`0 0 ${halfCircle * 2} ${halfCircle * 2}`}
+      >
+        <G rotation="-90" origin={`${halfCircle}, ${halfCircle}`}>
+          <Circle
+            cx="50%"
+            cy="50%"
+            r={radius}
+            fill="transparent"
+            strokeWidth={strokeWidth}
+            stroke="#ffdeb3"
+            strokeOpacity={0.5}
+          />
+          <Circle
+            cx="50%"
+            cy="50%"
+            r={radius}
+            fill="transparent"
+            strokeWidth={strokeWidth}
+            stroke="#ffdeb3"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+          />
+        </G>
+      </Svg>
+    </StyledView>
+  );
+};
 
 export const Container = styled(LinearGradient).attrs({
   colors: ["#9D4EDD", "#BC84E5", "#e89d65"],
@@ -148,23 +203,3 @@ export const AssignmentProgressText = styled.Text`
   text-shadow-opacity: 30%;
   text-shadow-radius: 5px;
 `;
-
-export const ProgressRingSvg = ({ radius, strokeWidth, progress }) => {
-  const circumference = radius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (progress / 100) * circumference;
-
-  return (
-    <Svg width={radius * 2} height={radius * 2}>
-      <Circle
-        stroke="#ffdeb3"
-        fill="transparent"
-        strokeWidth={strokeWidth}
-        strokeDasharray={`${circumference} ${circumference}`}
-        strokeDashoffset={strokeDashoffset}
-        r={radius - strokeWidth / 2}
-        cx={radius}
-        cy={radius}
-      />
-    </Svg>
-  );
-};

@@ -55,7 +55,7 @@ export const BadgeContainer = styled(DefaultContainer)`
   height: ${SCREEN_HEIGHT * 0.22}px;
 `;
 
-export const BadgeBox = styled.View`
+export const BadgeBox = styled.TouchableOpacity`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,11 +66,13 @@ export const BadgeBox = styled.View`
   margin-right: ${SCREEN_WIDTH * 0.01}px;
   margin-bottom: ${SCREEN_HEIGHT * 0.01}px;
   margin-top: ${SCREEN_HEIGHT * 0.01}px;
+  box-shadow: 0px 0px 3px #ffdeb3;
 `;
 
 export const BadgeImage = styled.Image`
   width: 35px;
   height: 40px;
+  box-shadow: 0px 0px 20px #fff;
 `;
 
 export const BadgeHistoryContainer = styled.View`
@@ -100,14 +102,14 @@ export const BadgeHistoryHeaderTitle = styled(HeaderTitle)`
 `;
 
 export const BadgeHistoryIcon = styled.Image`
-  width: 75px;
-  height: 80px;
+  width: ${SCREEN_WIDTH * 0.17}px;
+  height: ${SCREEN_WIDTH * 0.17}px; ;
 `;
 
 export const BadgeHistoryTextContainer = styled.View``;
 
 export const BadgeHistoryTitle = styled(HeaderTitle)`
-  font-size: 20px;
+  font-size: ${SCREEN_WIDTH * 0.05}px; ;
 `;
 
 export const BadgeHistoryDescription = styled.Text`

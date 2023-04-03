@@ -88,11 +88,11 @@ export default function App() {
   return (
     <NavigationContainer {...this}>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Login"
           component={Login}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="Home"
           component={Tabs}
