@@ -125,7 +125,7 @@ const Login = () => {
             </InputInfoContainer>
 
             <InputInfoContainer>
-              <InputInfoText>Access Token</InputInfoText>
+              <InputInfoText>Password</InputInfoText>
               <InputInfo secureTextEntry></InputInfo>
             </InputInfoContainer>
 
