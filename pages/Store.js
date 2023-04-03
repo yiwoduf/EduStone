@@ -1,16 +1,10 @@
 import React from "react";
-import { ScrollView, SafeAreaView } from "react-native";
+import { ScrollView } from "react-native";
 import {
   MainContainer,
   Header,
   HeaderTitle,
   Container,
-  MoreInfoContainer,
-  InfoContainer,
-  DescriptText,
-  AssignmentNumText,
-  InfoText,
-  AssignmentProgressText,
   NoticeContainer,
   NoticeImage,
   NoticeText,
@@ -18,6 +12,7 @@ import {
   MarketContainer,
   Item,
   Center,
+  MarketIamgeContainer,
   SubContainer,
   TransparentContainer,
 } from "../style/styleStore";

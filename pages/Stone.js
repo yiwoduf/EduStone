@@ -17,6 +17,8 @@ import {
   AssignmentNumText,
   InfoText,
   AssignmentProgressText,
+  ProgressBar,
+  RingContainer,
 } from "../style/styleStone";
 
 const Stone = () => {
@@ -31,6 +33,9 @@ const Stone = () => {
             <PointsText> 8105 PTS</PointsText>
           </PointsContainer>
           <StoneExpContainer>
+            <RingContainer>
+              <ProgressBar progress={0.5} />
+            </RingContainer>
             <StoneExpTextCurrent>1029</StoneExpTextCurrent>
             <StoneExpTextMax>/2000</StoneExpTextMax>
           </StoneExpContainer>
