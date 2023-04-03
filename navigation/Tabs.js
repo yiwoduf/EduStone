@@ -26,7 +26,7 @@ const Tabs = () => {
         tabBarStyle: {
           borderTopWidth: 0,
           elevation: 0,
-          height: 90,
+          height: 82,
           borderRadius: 30,
           overflow: "hidden",
           position: "absolute",
@@ -62,6 +62,7 @@ const Tabs = () => {
               <Image
                 source={shopIcon}
                 style={{
+                  marginTop: 17,
                   width: 25,
                   height: 25,
                   tintColor: color,
@@ -81,6 +82,7 @@ const Tabs = () => {
               <Image
                 source={todoIcon}
                 style={{
+                  marginTop: 17,
                   width: 25,
                   height: 25,
                   tintColor: color,
@@ -100,6 +102,7 @@ const Tabs = () => {
               <Image
                 source={assignmentsIcon}
                 style={{
+                  marginTop: 17,
                   width: 25,
                   height: 25,
                   tintColor: color,
@@ -119,6 +122,7 @@ const Tabs = () => {
               <Image
                 source={awardsIcon}
                 style={{
+                  marginTop: 17,
                   width: 25,
                   height: 25,
                   tintColor: color,
@@ -138,6 +142,7 @@ const Tabs = () => {
               <Image
                 source={profileIcon}
                 style={{
+                  marginTop: 17,
                   width: 25,
                   height: 25,
                   tintColor: color,

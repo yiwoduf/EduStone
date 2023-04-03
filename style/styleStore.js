@@ -17,6 +17,10 @@ export const MainContainer = styled.SafeAreaView`
   width: ${SCREEN_WIDTH}px;
 `;
 
+export const SubContainer = styled.View`
+  bottom: ${SCREEN_HEIGHT * 0.06}px;
+`;
+
 export const Container = styled(LinearGradient).attrs({
   colors: ["#9D4EDD", "#BC84E5", "#e89d65"],
   start: { x: 1, y: 0 },
@@ -49,6 +53,7 @@ export const Center = styled.TouchableOpacity.attrs({
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 30px;
 `;
 
 export const NoticeImage = styled.Image`

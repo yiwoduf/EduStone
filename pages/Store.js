@@ -18,6 +18,8 @@ import {
   MarketContainer,
   Item,
   Center,
+  SubContainer,
+  TransparentContainer,
 } from "../style/styleStore";
 
 const Store = () => {
@@ -28,6 +30,7 @@ const Store = () => {
           <Header>
             <HeaderTitle>STORE</HeaderTitle>
           </Header>
+
           <ScrollView showsVerticalScrollIndicator={false}>
             <Center>
               <NoticeContainer>
@@ -37,42 +40,44 @@ const Store = () => {
                 />
               </NoticeContainer>
             </Center>
-            <SectionTitle>BEAKEM BUCKS</SectionTitle>
-            <MarketContainer>
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-              </ScrollView>
-            </MarketContainer>
-            <SectionTitle>GAME TICKETS</SectionTitle>
-            <MarketContainer>
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-              </ScrollView>
-            </MarketContainer>
-            <SectionTitle>PARKING PERMIT</SectionTitle>
-            <MarketContainer>
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-              </ScrollView>
-            </MarketContainer>
+            <SubContainer>
+              <SectionTitle>BEAKEM BUCKS</SectionTitle>
+              <MarketContainer>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Item />
+                  <Item />
+                  <Item />
+                  <Item />
+                </ScrollView>
+              </MarketContainer>
+              <SectionTitle>GAME TICKETS</SectionTitle>
+              <MarketContainer>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Item />
+                  <Item />
+                  <Item />
+                  <Item />
+                </ScrollView>
+              </MarketContainer>
+              <SectionTitle>PARKING PERMIT</SectionTitle>
+              <MarketContainer>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Item />
+                  <Item />
+                  <Item />
+                  <Item />
+                </ScrollView>
+              </MarketContainer>
+            </SubContainer>
           </ScrollView>
         </MainContainer>
       </Container>
