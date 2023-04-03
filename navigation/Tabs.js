@@ -111,13 +111,13 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Award"
+        component={Award}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
             return (
               <Image
-                source={profileIcon}
+                source={awardsIcon}
                 style={{
                   width: 25,
                   height: 25,
@@ -130,13 +130,13 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Award"
-        component={Award}
+        name="Profile"
+        component={Profile}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
             return (
               <Image
-                source={awardsIcon}
+                source={profileIcon}
                 style={{
                   width: 25,
                   height: 25,
