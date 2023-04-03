@@ -21,6 +21,10 @@ import {
 } from "../style/styleStone";
 
 const Stone = () => {
+  const expValues = { current: 1200, max: 3000 };
+
+  const selectedValue = expValues;
+  const percentage = (selectedValue.current / selectedValue.max) * 100;
   return (
     <>
       <Container>
@@ -29,12 +33,12 @@ const Stone = () => {
             <HeaderTitle>PROGRESS</HeaderTitle>
           </Header>
           <PointsContainer>
-            <PointsText> 8105 PTS</PointsText>
+            <PointsText>8105 PTS</PointsText>
           </PointsContainer>
           <StoneExpContainer>
-            <ProgressCircle percentage={52} />
-            <StoneExpTextCurrent>1029</StoneExpTextCurrent>
-            <StoneExpTextMax>/2000</StoneExpTextMax>
+            <ProgressCircle percentage={percentage} />
+            <StoneExpTextCurrent>{selectedValue.current}</StoneExpTextCurrent>
+            <StoneExpTextMax>/{selectedValue.max}</StoneExpTextMax>
           </StoneExpContainer>
           <MoreInfoContainer>
             <InfoContainer>

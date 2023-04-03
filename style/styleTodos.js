@@ -42,7 +42,6 @@ export const HeaderTitle = styled.Text`
 `;
 
 export const TodoListContainer = styled.FlatList`
-  margin-top: ${SCREEN_HEIGHT * 0.05}px;
   padding-top: ${SCREEN_HEIGHT * 0.05}px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: ${(SCREEN_HEIGHT * 0.15) / 3}px;
