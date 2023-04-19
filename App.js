@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import * as Font from "expo-font";
 import { useFonts } from "expo-font";
+import { LinearGradient } from "expo-linear-gradient";
 import { Text, Image, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset, useAssets } from "expo-asset";
@@ -8,6 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./navigation/Tabs";
 import * as SplashScreen from "expo-splash-screen";
 import Login from "./pages/Login";
+import Loading from "./pages/Loading";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
@@ -16,6 +18,8 @@ const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 SplashScreen.preventAutoHideAsync();
 
 const Stack = createStackNavigator();
+
+export let imagesArray
 
 export default function App() {
   const [ready, setReady] = useState(false);
@@ -54,6 +58,7 @@ export default function App() {
           require("./design/ui/stone/stones/heart_stone.png"),
           require("./design/ui/UI_Calendar_iOS.png"),
         ];
+        imagesArray = imagesToLoad;
         const imagePromises = imagesToLoad.map((image) =>
           Asset.loadAsync(image)
         );
@@ -91,6 +96,11 @@ export default function App() {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Loading"
+          component={Loading}
           options={{ headerShown: false }}
         />
         <Stack.Screen

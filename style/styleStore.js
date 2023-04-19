@@ -4,7 +4,8 @@
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 import { basicFont, contentFontSize, specialFont, boldFont } from "./fonts";
-import LinearGradient from "react-native-linear-gradient";
+// import LinearGradient from "react-native-linear-gradient";
+import { LinearGradient } from "expo-linear-gradient";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window"); // Retrieve Information of Device Window Size
 
