@@ -54,6 +54,7 @@ export const DefaultContainer = styled.View`
 
 export const BadgeContainer = styled(DefaultContainer)`
   height: ${SCREEN_HEIGHT * 0.22}px;
+  flex-wrap: wrap;
 `;
 
 export const BadgeBox = styled.TouchableOpacity`
@@ -107,7 +108,12 @@ export const BadgeHistoryIcon = styled.Image`
   height: ${SCREEN_WIDTH * 0.17}px; ;
 `;
 
-export const BadgeHistoryTextContainer = styled.View``;
+export const BadgeHistoryTextContainer = styled.View`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const BadgeHistoryTitle = styled(HeaderTitle)`
   font-size: ${SCREEN_WIDTH * 0.05}px; ;

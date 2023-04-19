@@ -109,7 +109,7 @@ func getDummyUserFromDatabase(email string) (*User, error) {
 		tempAward.Key = "awardUID" + strconv.Itoa(i)
 		tempBadge.Key = "badgeUID" + strconv.Itoa(i)
 		tempAward.Source = 0
-		tempBadge.Source = 0
+		tempBadge.Source = 1
 		user.Awards = append(user.Awards, tempAward)
 		user.Badges = append(user.Badges, tempBadge)
 	}

@@ -15,7 +15,13 @@ import {
   BadgeHistoryTextContainer,
   BadgeHistoryIcon,
 } from "../style/styleAward";
-import { FlatList } from "react-native";
+import { FlatList, ScrollView, Text } from "react-native";
+
+import { Badges, Awards } from "./content_population/AwardPopulation";
+import { getLoadingStatus, getUserData } from "./Loading.js";
+
+let temp1 = getLoadingStatus();
+let temp2 = getUserData();
 
 const Award = () => {
   const renderBadge = ({ item }) => (
@@ -66,6 +72,23 @@ const Award = () => {
     </BadgeHistoryBox>
   );
 
+          // <BadgeContainer>
+          //   <FlatList
+          //     data={badgeItems}
+          //     renderItem={renderBadge}
+          //     keyExtractor={(item) => item.toString()}
+          //     numColumns={4} // Set the number of columns to 4
+          //     columnWrapperStyle={{ justifyContent: "space-between" }}
+          //     scrollEnabled={false}
+          //   />
+          // </BadgeContainer>
+          // <FlatList
+          //   data={badgeHistoryData}
+          //   renderItem={renderBadgeHistoryItem}
+          //   keyExtractor={(item) => item.id}
+          //   showsVerticalScrollIndicator={false}
+          // />
+  
   return (
     <>
       <Container>
@@ -73,26 +96,18 @@ const Award = () => {
           <Header>
             <HeaderTitle>AWARDS & BADGES</HeaderTitle>
           </Header>
+          
           <BadgeContainer>
-            <FlatList
-              data={badgeItems}
-              renderItem={renderBadge}
-              keyExtractor={(item) => item.toString()}
-              numColumns={4} // Set the number of columns to 4
-              columnWrapperStyle={{ justifyContent: "space-between" }}
-              scrollEnabled={false}
-            />
+            <Badges/>
           </BadgeContainer>
+
           <BadgeHistoryContainer>
             <BadgeHistoryHeader>
               <BadgeHistoryHeaderTitle>AWARD HISTORY</BadgeHistoryHeaderTitle>
             </BadgeHistoryHeader>
-            <FlatList
-              data={badgeHistoryData}
-              renderItem={renderBadgeHistoryItem}
-              keyExtractor={(item) => item.id}
-              showsVerticalScrollIndicator={false}
-            />
+            <ScrollView>
+              <Awards/>
+            </ScrollView>
           </BadgeHistoryContainer>
         </MainContainer>
       </Container>

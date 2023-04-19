@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, CommonActions } from "@react-navigation/native";
 
 export let userData;
-export let isLoaded;
+export let isLoaded = false;
 
 const storeUserEmail = async (value) => {
 	try {
@@ -59,6 +59,14 @@ async function getUser() {
   // console.log("Response recieved: ", user);
   console.log("Retrieved API response...");
 	return user;
+}
+
+export function getLoadingStatus() {
+  return(isLoaded);
+}
+
+export function getUserData() {
+  return(userData);
 }
 
 // App Rendering

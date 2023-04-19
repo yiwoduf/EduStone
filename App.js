@@ -37,6 +37,8 @@ export default function App() {
         const fontsToLoad = [Ionicons.font];
         const fontPromises = fontsToLoad.map((font) => Font.loadAsync(font));
         const imagesToLoad = [
+          require("./design/ui/award/achievements/award_icon.png"),
+          require("./design/ui/award/badges/badge.png"),
           require("./design/ui/award/badges/badge_BLUE.png"),
           require("./design/ui/award/badges/badge_GREEN.png"),
           require("./design/ui/award/badges/badge_LPURPLE.png"),
