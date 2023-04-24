@@ -1,5 +1,5 @@
-// styleCalendar.js
-// Stylesheet for Market Page
+// styleStore.js
+// Stylesheet for Store/Market Page
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";

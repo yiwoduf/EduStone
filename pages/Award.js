@@ -24,22 +24,7 @@ const Award = () => {
     </BadgeBox>
   );
 
-  // Create an array of 8 items
   const badgeItems = Array.from({ length: 8 }, (_, index) => index);
-
-  // const badgeHistoryData = [
-  //   {
-  //     id: "1",
-  //     title: "AWARD TITLE",
-  //     description: "THIS IS A DESCRIPTION OF AWARD TITLE",
-  //   },
-  //   {
-  //     id: "2",
-  //     title: "AWARD TITLE",
-  //     description: "THIS IS A DESCRIPTION OF AWARD TITLE",
-  //   },
-  //   // Add more items as needed
-  // ];
 
   const createBadgeHistoryData = (count) => {
     return Array.from({ length: count }, (_, index) => {
