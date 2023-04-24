@@ -1,5 +1,5 @@
-// StyleTodos.js
-// Stylesheet for Todos Page
+// StyleProfile.js
+// Stylesheet for Profile Page
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";

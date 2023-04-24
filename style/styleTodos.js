@@ -1,4 +1,4 @@
-// StyleTodos.js
+// styleTodos.js
 // Stylesheet for Todos Page
 
 import { Dimensions } from "react-native";

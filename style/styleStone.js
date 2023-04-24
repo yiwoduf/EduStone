@@ -1,5 +1,5 @@
-// StyleTodos.js
-// Stylesheet for Todos Page
+// styleStone.js
+// Stylesheet for Stone Page
 
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
